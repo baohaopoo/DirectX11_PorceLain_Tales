@@ -1,4 +1,6 @@
-﻿  BackGround.cpp
-c:\users\baoha\documents\directx11_porcelain_tales\client\private\background.cpp(22): warning C4244: 'argument': conversion from 'const unsigned int' to 'float', possible loss of data
+﻿  Level_GamePlay.cpp
+DirectXTKd.lib(pch.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DirectXTKd.lib(pch.obj)' or at 'C:\Users\baoha\Documents\DirectX11_PorceLain_Tales\Client\Bin\DirectXTK.pdb'; linking object as if no debug info
+DirectXTKd.lib(ScreenGrab.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DirectXTKd.lib(ScreenGrab.obj)' or at 'C:\Users\baoha\Documents\DirectX11_PorceLain_Tales\Client\Bin\DirectXTK.pdb'; linking object as if no debug info
+DirectXTKd.lib(WICTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DirectXTKd.lib(WICTextureLoader.obj)' or at 'C:\Users\baoha\Documents\DirectX11_PorceLain_Tales\Client\Bin\DirectXTK.pdb'; linking object as if no debug info
   Client.vcxproj -> C:\Users\baoha\Documents\DirectX11_PorceLain_Tales\Client\Default\..\Bin\Client.exe
   Client.vcxproj -> ..\Bin\Client.pdb (Full PDB)

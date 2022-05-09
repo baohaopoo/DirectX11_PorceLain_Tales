@@ -18,6 +18,11 @@ HRESULT CLevel_Loading::NativeConstruct(LEVEL eNextLevel)
 	if (FAILED(__super::NativeConstruct()))
 		return E_FAIL;
 
+
+	if (FAILED(Ready_Layer_LoadingUI(TEXT("Layer_LoadingUI"))))
+		return E_FAIL;
+
+
 	m_eNextLevel = eNextLevel;
 
 	m_pLoader = CLoader::Create(m_pDevice, m_pDeviceContext, eNextLevel);
@@ -71,6 +76,18 @@ HRESULT CLevel_Loading::Render()
 	lstrcat(szText, m_pLoader->Get_LoadingText());
 
 	SetWindowText(g_hWnd, szText);
+
+	return S_OK;
+}
+
+HRESULT CLevel_Loading::Ready_Layer_LoadingUI(const _tchar * pLayerTag)
+{
+	CGameInstance* pGameInstance = GET_INSTANCE(CGameInstance);
+
+	if (FAILED(pGameInstance->Add_GameObjectToLayer(LEVEL_LOADING, pLayerTag, TEXT("Prototype_GameObject_LoadingUI"))))
+		return E_FAIL;
+
+	RELEASE_INSTANCE(CGameInstance);
 
 	return S_OK;
 }

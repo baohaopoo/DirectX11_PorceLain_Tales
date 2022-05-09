@@ -24,6 +24,9 @@ private:
 	class CLoader*	m_pLoader = nullptr;
 
 public:
+	HRESULT Ready_Layer_LoadingUI(const _tchar* pLayerTag);
+
+public:
 	static CLevel_Loading* Create(ID3D11Device* pDeviceOut, ID3D11DeviceContext* pDeviceContextOut, LEVEL eNextLevel);
 	virtual void Free() override;
 };
