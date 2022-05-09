@@ -37,6 +37,13 @@ public:
 	HRESULT Ready_Prototype_Component();	
 
 public:
+	//UI 게임 오브젝트 미리 로딩 
+	HRESULT Ready_Prototype_GameObject_UI();
+	//Texture 미리 로딩
+	HRESULT Ready_Prototype_Texture();
+	HRESULT Ready_Prototype_Texture_UI();
+
+public:
 	static CMainApp* Create();
 	virtual void Free() override;
 };

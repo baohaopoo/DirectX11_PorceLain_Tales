@@ -1,0 +1,48 @@
+﻿  Engine_Struct.cpp
+  VIBuffer_Terrain.cpp
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\vibuffer_terrain.cpp(57): warning C4244: 'argument': conversion from 'Engine::_uint' to 'float', possible loss of data
+  VIBuffer_Rect.cpp
+  VIBuffer.cpp
+  Transform.cpp
+  Timer_Manager.cpp
+  Timer.cpp
+  Texture.cpp
+  Shader.cpp
+  Renderer.cpp
+  PIpeLine.cpp
+  Object_Manager.cpp
+  Model.cpp
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\model.cpp(147): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  MeshContainer.cpp
+  Light_Manager.cpp
+  Light.cpp
+  Level_Manager.cpp
+  Level.cpp
+  Layer.cpp
+  Input_Device.cpp
+  Generating Code...
+  Compiling...
+  Graphic_Device.cpp
+  GameObject.cpp
+  GameInstance.cpp
+  Component_Manager.cpp
+  Component.cpp
+  Channel.cpp
+  Camera.cpp
+  BlendObject.cpp
+  Base.cpp
+  Animation.cpp
+  Generating Code...
+  LINK : ..\Bin\Engine.dll not found or not built by the last incremental link; performing full link
+     Creating library ..\Bin\Engine.lib and object ..\Bin\Engine.exp
+Effects11d.lib(d3dxGlobal.obj) : warning LNK4099: PDB 'Effects11d.pdb' was not found with 'Effects11d.lib(d3dxGlobal.obj)' or at 'C:\Users\baoha\Documents\DirectX11_PorceLain_Tales\Engine\Bin\Effects11d.pdb'; linking object as if no debug info
+Effects11d.lib(EffectAPI.obj) : warning LNK4099: PDB 'Effects11d.pdb' was not found with 'Effects11d.lib(EffectAPI.obj)' or at 'C:\Users\baoha\Documents\DirectX11_PorceLain_Tales\Engine\Bin\Effects11d.pdb'; linking object as if no debug info
+Effects11d.lib(EffectLoad.obj) : warning LNK4099: PDB 'Effects11d.pdb' was not found with 'Effects11d.lib(EffectLoad.obj)' or at 'C:\Users\baoha\Documents\DirectX11_PorceLain_Tales\Engine\Bin\Effects11d.pdb'; linking object as if no debug info
+Effects11d.lib(EffectNonRuntime.obj) : warning LNK4099: PDB 'Effects11d.pdb' was not found with 'Effects11d.lib(EffectNonRuntime.obj)' or at 'C:\Users\baoha\Documents\DirectX11_PorceLain_Tales\Engine\Bin\Effects11d.pdb'; linking object as if no debug info
+Effects11d.lib(EffectReflection.obj) : warning LNK4099: PDB 'Effects11d.pdb' was not found with 'Effects11d.lib(EffectReflection.obj)' or at 'C:\Users\baoha\Documents\DirectX11_PorceLain_Tales\Engine\Bin\Effects11d.pdb'; linking object as if no debug info
+Effects11d.lib(EffectRuntime.obj) : warning LNK4099: PDB 'Effects11d.pdb' was not found with 'Effects11d.lib(EffectRuntime.obj)' or at 'C:\Users\baoha\Documents\DirectX11_PorceLain_Tales\Engine\Bin\Effects11d.pdb'; linking object as if no debug info
+DirectXTKd.lib(DDSTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DirectXTKd.lib(DDSTextureLoader.obj)' or at 'C:\Users\baoha\Documents\DirectX11_PorceLain_Tales\Engine\Bin\DirectXTK.pdb'; linking object as if no debug info
+DirectXTKd.lib(pch.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DirectXTKd.lib(pch.obj)' or at 'C:\Users\baoha\Documents\DirectX11_PorceLain_Tales\Engine\Bin\DirectXTK.pdb'; linking object as if no debug info
+DirectXTKd.lib(WICTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DirectXTKd.lib(WICTextureLoader.obj)' or at 'C:\Users\baoha\Documents\DirectX11_PorceLain_Tales\Engine\Bin\DirectXTK.pdb'; linking object as if no debug info
+  Engine.vcxproj -> C:\Users\baoha\Documents\DirectX11_PorceLain_Tales\Engine\Default\..\Bin\Engine.dll
+  Engine.vcxproj -> ..\Bin\Engine.pdb (Full PDB)

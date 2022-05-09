@@ -43,6 +43,18 @@
     <Filter Include="02. GameObject\Fork">
       <UniqueIdentifier>{fe403a0d-ad15-4c60-84c2-7367a1b4a2e2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="03.UI">
+      <UniqueIdentifier>{436e0261-dbdf-4cf4-a9c5-41a6cfc0f2f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.UI\LogoUI">
+      <UniqueIdentifier>{9653b80e-d790-4194-a084-9e06d60c5d79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.UI\LoadingUI">
+      <UniqueIdentifier>{2dd07e99-470b-4fee-b5b5-8495b3e348bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.UI\PlayUI">
+      <UniqueIdentifier>{b2d310e1-ff04-47a5-a322-14edf00e7954}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -93,6 +105,27 @@
     <ClInclude Include="..\Public\Fork.h">
       <Filter>02. GameObject\Fork</Filter>
     </ClInclude>
+    <ClInclude Include="..\Public\UI.h">
+      <Filter>03.UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\ExitUI.h">
+      <Filter>03.UI\LogoUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\MenuUI.h">
+      <Filter>03.UI\LogoUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\ExitBtn.h">
+      <Filter>03.UI\LogoUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\LoadingUI.h">
+      <Filter>03.UI\LoadingUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\EyeUI.h">
+      <Filter>03.UI\PlayUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\HeartUI.h">
+      <Filter>03.UI\PlayUI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Client.cpp">
@@ -127,6 +160,27 @@
     </ClCompile>
     <ClCompile Include="..\Private\Fork.cpp">
       <Filter>02. GameObject\Fork</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\UI.cpp">
+      <Filter>03.UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\ExitUI.cpp">
+      <Filter>03.UI\LogoUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\MenuUI.cpp">
+      <Filter>03.UI\LogoUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\ExitBtn.cpp">
+      <Filter>03.UI\LogoUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\LoadingUI.cpp">
+      <Filter>03.UI\LoadingUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\EyeUI.cpp">
+      <Filter>03.UI\PlayUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\HeartUI.cpp">
+      <Filter>03.UI\PlayUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

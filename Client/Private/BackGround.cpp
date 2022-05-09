@@ -18,6 +18,7 @@ HRESULT CBackGround::NativeConstruct_Prototype()
 	if (FAILED(__super::NativeConstruct_Prototype()))
 		return E_FAIL;
 
+	//직교 투영 부분.
 	XMStoreFloat4x4(&m_ProjMatrix, XMMatrixOrthographicLH(g_iWinCX, g_iWinCY, 0.f, 1.f));
 	
 	return S_OK;
@@ -111,8 +112,9 @@ HRESULT CBackGround::SetUp_Components()
 	if (FAILED(__super::SetUp_Components(TEXT("Com_VIBuffer"), LEVEL_STATIC, TEXT("Prototype_Component_VIBuffer_Rect"), (CComponent**)&m_pVIBufferCom)))
 		return E_FAIL;
 
+
 	/* For.Com_Texture */
-	if (FAILED(__super::SetUp_Components(TEXT("Com_Texture"), LEVEL_STATIC, TEXT("Prototype_Component_Texture_Default"), (CComponent**)&m_pTextureCom)))
+	if (FAILED(__super::SetUp_Components(TEXT("Com_Texture"), LEVEL_LOGO, TEXT("Prototype_Component_Texture_Default"), (CComponent**)&m_pTextureCom)))
 		return E_FAIL;
 
 	return S_OK;

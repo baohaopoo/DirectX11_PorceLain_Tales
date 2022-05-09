@@ -175,13 +175,20 @@
     <ClInclude Include="..\Public\BackGround.h" />
     <ClInclude Include="..\Public\Camera_Default.h" />
     <ClInclude Include="..\Public\Client_Defines.h" />
+    <ClInclude Include="..\Public\ExitBtn.h" />
+    <ClInclude Include="..\Public\ExitUI.h" />
+    <ClInclude Include="..\Public\EyeUI.h" />
     <ClInclude Include="..\Public\Fork.h" />
+    <ClInclude Include="..\Public\HeartUI.h" />
     <ClInclude Include="..\Public\Level_GamePlay.h" />
     <ClInclude Include="..\Public\Level_Loading.h" />
     <ClInclude Include="..\Public\Level_Logo.h" />
     <ClInclude Include="..\Public\Loader.h" />
+    <ClInclude Include="..\Public\LoadingUI.h" />
     <ClInclude Include="..\Public\MainApp.h" />
+    <ClInclude Include="..\Public\MenuUI.h" />
     <ClInclude Include="..\Public\Terrain.h" />
+    <ClInclude Include="..\Public\UI.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
@@ -190,13 +197,20 @@
   <ItemGroup>
     <ClCompile Include="..\Private\BackGround.cpp" />
     <ClCompile Include="..\Private\Camera_Default.cpp" />
+    <ClCompile Include="..\Private\ExitBtn.cpp" />
+    <ClCompile Include="..\Private\ExitUI.cpp" />
+    <ClCompile Include="..\Private\EyeUI.cpp" />
     <ClCompile Include="..\Private\Fork.cpp" />
+    <ClCompile Include="..\Private\HeartUI.cpp" />
     <ClCompile Include="..\Private\Level_GamePlay.cpp" />
     <ClCompile Include="..\Private\Level_Loading.cpp" />
     <ClCompile Include="..\Private\Level_Logo.cpp" />
     <ClCompile Include="..\Private\Loader.cpp" />
+    <ClCompile Include="..\Private\LoadingUI.cpp" />
     <ClCompile Include="..\Private\MainApp.cpp" />
+    <ClCompile Include="..\Private\MenuUI.cpp" />
     <ClCompile Include="..\Private\Terrain.cpp" />
+    <ClCompile Include="..\Private\UI.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

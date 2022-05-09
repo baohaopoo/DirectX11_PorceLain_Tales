@@ -18,6 +18,9 @@ public:
 
 public:
 	HRESULT Ready_Layer_BackGround(const _tchar* pLayerTag);
+	HRESULT Ready_Layer_MenuUI(const _tchar* pLayerTag);
+	HRESULT Ready_Layer_ExitUI(const _tchar* pLayerTag);
+	HRESULT Ready_Layer_ExitBtnUI(const _tchar* pLayerTag);
 
 public:
 	static CLevel_Logo* Create(ID3D11Device* pDeviceOut, ID3D11DeviceContext* pDeviceContextOut);

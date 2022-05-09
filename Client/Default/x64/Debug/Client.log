@@ -1,0 +1,4 @@
+﻿  BackGround.cpp
+c:\users\baoha\documents\directx11_porcelain_tales\client\private\background.cpp(22): warning C4244: 'argument': conversion from 'const unsigned int' to 'float', possible loss of data
+  Client.vcxproj -> C:\Users\baoha\Documents\DirectX11_PorceLain_Tales\Client\Default\..\Bin\Client.exe
+  Client.vcxproj -> ..\Bin\Client.pdb (Full PDB)
