@@ -4,7 +4,8 @@
 #include "GameInstance.h"
 #include "Camera_Default.h"
 #include "Terrain.h"
-#include "Fork.h"
+#include "Vampire.h"
+#include "Player.h"
 
 CLoader::CLoader(ID3D11Device* pDeviceOut, ID3D11DeviceContext* pDeviceContextOut)
 	: m_pDevice(pDeviceOut), m_pDeviceContext(pDeviceContextOut)
@@ -101,14 +102,23 @@ HRESULT CLoader::Loading_ForGamePlayLevel()
 	/* For. Prototype_Component_Model_ForkLift */
 	PivotMatrix = XMMatrixScaling(0.01f, 0.01f, 0.01f) * XMMatrixRotationY(XMConvertToRadians(180.0f));
 
-	//if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Model_ForkLift"),
-	//	CModel::Create(m_pDevice, m_pDeviceContext, CModel::TYPE_NONANIM, "../Bin/Resources/Meshes/ForkLift/", "ForkLift.fbx", PivotMatrix))))
-	//	return E_FAIL;
+
+	//메쉬 로드.
 
 	if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Model_ForkLift"),
 		CModel::Create(m_pDevice, m_pDeviceContext, CModel::TYPE_NONANIM, "../Bin/Resources/Meshes/Vampire/", "vampire2.fbx", PivotMatrix))))
 		return E_FAIL;
 
+
+
+ 	//if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Model_Player"),
+		//CModel::Create(m_pDevice, m_pDeviceContext, CModel::TYPE_NONANIM, "../Bin/Resources/Meshes/Player/", "KabouterPlayer.fbx", PivotMatrix))))
+		//return E_FAIL;
+
+
+	if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Model_Player"),
+		CModel::Create(m_pDevice, m_pDeviceContext, CModel::TYPE_NONANIM, "../Bin/Resources/Meshes/VampireBed/", "vampireBed.fbx", PivotMatrix))))
+		return E_FAIL;
 
 	///* For. Prototype_Component_VIBuffer_Cube */
 	//if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_VIBuffer_Cube"),
@@ -129,7 +139,12 @@ HRESULT CLoader::Loading_ForGamePlayLevel()
 	lstrcpy(m_szLoading, TEXT("게임오브젝트를 로드중입니다. "));
 	/* For.Prototype_GameObject_ForkLift */
 	if (FAILED(pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_ForkLift"),
-		CFork::Create(m_pDevice, m_pDeviceContext))))
+		CVampire::Create(m_pDevice, m_pDeviceContext))))
+		return E_FAIL;
+
+	/* For.Prototype_GameObject_Player */
+	if (FAILED(pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_Player"),
+		Player::Create(m_pDevice, m_pDeviceContext))))
 		return E_FAIL;
 
 	/* For.Prototype_GameObject_Terrain */

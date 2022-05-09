@@ -40,9 +40,6 @@
     <Filter Include="02. GameObject\Terrain">
       <UniqueIdentifier>{43b1b72b-67fd-4855-b281-2a554f2cca19}</UniqueIdentifier>
     </Filter>
-    <Filter Include="02. GameObject\Fork">
-      <UniqueIdentifier>{fe403a0d-ad15-4c60-84c2-7367a1b4a2e2}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03.UI">
       <UniqueIdentifier>{436e0261-dbdf-4cf4-a9c5-41a6cfc0f2f7}</UniqueIdentifier>
     </Filter>
@@ -54,6 +51,12 @@
     </Filter>
     <Filter Include="03.UI\PlayUI">
       <UniqueIdentifier>{b2d310e1-ff04-47a5-a322-14edf00e7954}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. GameObject\Vampire">
+      <UniqueIdentifier>{fe403a0d-ad15-4c60-84c2-7367a1b4a2e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. GameObject\Player">
+      <UniqueIdentifier>{46050c33-7e01-497e-b5d1-168ec0d0ed5a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -102,9 +105,6 @@
     <ClInclude Include="..\Bin\ShaderFiles\Shader_Defines.hpp">
       <Filter>97. ShaderFiles</Filter>
     </ClInclude>
-    <ClInclude Include="..\Public\Fork.h">
-      <Filter>02. GameObject\Fork</Filter>
-    </ClInclude>
     <ClInclude Include="..\Public\UI.h">
       <Filter>03.UI</Filter>
     </ClInclude>
@@ -125,6 +125,12 @@
     </ClInclude>
     <ClInclude Include="..\Public\HeartUI.h">
       <Filter>03.UI\PlayUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Vampire.h">
+      <Filter>02. GameObject\Vampire</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Player.h">
+      <Filter>02. GameObject\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -158,9 +164,6 @@
     <ClCompile Include="..\Private\Terrain.cpp">
       <Filter>02. GameObject\Terrain</Filter>
     </ClCompile>
-    <ClCompile Include="..\Private\Fork.cpp">
-      <Filter>02. GameObject\Fork</Filter>
-    </ClCompile>
     <ClCompile Include="..\Private\UI.cpp">
       <Filter>03.UI</Filter>
     </ClCompile>
@@ -181,6 +184,12 @@
     </ClCompile>
     <ClCompile Include="..\Private\HeartUI.cpp">
       <Filter>03.UI\PlayUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Vampire.cpp">
+      <Filter>02. GameObject\Vampire</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Player.cpp">
+      <Filter>02. GameObject\Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

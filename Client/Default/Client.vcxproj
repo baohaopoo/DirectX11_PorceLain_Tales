@@ -178,7 +178,8 @@
     <ClInclude Include="..\Public\ExitBtn.h" />
     <ClInclude Include="..\Public\ExitUI.h" />
     <ClInclude Include="..\Public\EyeUI.h" />
-    <ClInclude Include="..\Public\Fork.h" />
+    <ClInclude Include="..\Public\Player.h" />
+    <ClInclude Include="..\Public\Vampire.h" />
     <ClInclude Include="..\Public\HeartUI.h" />
     <ClInclude Include="..\Public\Level_GamePlay.h" />
     <ClInclude Include="..\Public\Level_Loading.h" />
@@ -200,7 +201,8 @@
     <ClCompile Include="..\Private\ExitBtn.cpp" />
     <ClCompile Include="..\Private\ExitUI.cpp" />
     <ClCompile Include="..\Private\EyeUI.cpp" />
-    <ClCompile Include="..\Private\Fork.cpp" />
+    <ClCompile Include="..\Private\Player.cpp" />
+    <ClCompile Include="..\Private\Vampire.cpp" />
     <ClCompile Include="..\Private\HeartUI.cpp" />
     <ClCompile Include="..\Private\Level_GamePlay.cpp" />
     <ClCompile Include="..\Private\Level_Loading.cpp" />
