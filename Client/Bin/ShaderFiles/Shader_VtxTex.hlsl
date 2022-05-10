@@ -61,7 +61,8 @@ PS_OUT PS_MAIN(PS_IN In)
 
 	Out.vColor = g_Texture.Sample(DefaultSampler, In.vTexUV);
 
-	Out.vColor.a = 0.5f;
+	//알파블렌드를 지워준다.
+	//Out.vColor.a = 0.5f;
 
 	return Out;
 }
@@ -93,6 +94,20 @@ technique11 DefaultTechnique
 
 		VertexShader = compile vs_5_0 VS_MAIN();
 		PixelShader = compile ps_5_0 PS_MAIN();
+	}
+
+
+	pass AlphaBlendRendering
+	{
+		SetRasterizerState(RS_Default);
+		SetDepthStencilState(DSS_Default, 0);
+		SetBlendState(BS_AlphaBlend, vector(1.f, 1.f, 1.f, 1.f), 0xffffffff);
+		/*	SetDepthStencilState();
+		*/
+
+		VertexShader = compile vs_5_0 VS_MAIN();
+		PixelShader = compile ps_5_0 PS_MAIN();
+
 	}
 
 }

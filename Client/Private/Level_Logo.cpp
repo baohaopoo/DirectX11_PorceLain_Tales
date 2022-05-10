@@ -18,6 +18,10 @@ HRESULT CLevel_Logo::NativeConstruct()
 
 	if (FAILED(Ready_Layer_BackGround(TEXT("Layer_BackGround"))))
 		return E_FAIL;
+	
+
+
+
 
 	return S_OK;
 }
@@ -91,6 +95,7 @@ void CLevel_Logo::Tick(_double TimeDelta)
 	}
 
 	Safe_Release(pGameInstance);
+
 }
 
 HRESULT CLevel_Logo::Render()
