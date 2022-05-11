@@ -14,17 +14,21 @@ private:
 	virtual ~CChannel() = default;
 
 public:
-	HRESULT NativeConstruct(const char* pChannelName);
+	HRESULT NativeConstruct(aiNodeAnim* pAIChannel);
 
 private:
 	char				m_szName[MAX_PATH] = "";
 
 private:
+	_uint							m_iNumKeyFrames = 0;
 	vector<KEYFRAME*>				m_KeyFrames;
 	typedef vector<KEYFRAME*>		KEYFRAMES;
 
+private:
+	HRESULT	Ready_KeyFrames(aiNodeAnim* pAIChannel);
+	
 public:
-	static CChannel* Create(const char* pChannelName);
+	static CChannel* Create(aiNodeAnim* pAIChannel);
 	virtual void Free() override;
 };
 

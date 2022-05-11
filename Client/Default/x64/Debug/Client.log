@@ -1,8 +1,40 @@
-﻿  Loader.cpp
-  Generating Code...
-  Compiling...
+﻿FXC : warning X4717: Effects deprecated for D3DCompiler_47
+  
+  compilation object save succeeded; see C:\Users\baoha\Documents\DirectX11_PorceLain_Tales\Client\Bin\Shader_VtxNorTex.cso
+FXC : warning X4717: Effects deprecated for D3DCompiler_47
+  
+  compilation object save succeeded; see C:\Users\baoha\Documents\DirectX11_PorceLain_Tales\Client\Bin\Shader_VtxTex.cso
+  stdafx.cpp
+  Client.cpp
+  UI.cpp
+c:\users\baoha\documents\directx11_porcelain_tales\client\private\ui.cpp(22): warning C4244: 'argument': conversion from 'const unsigned int' to 'float', possible loss of data
+  Terrain.cpp
+  MenuUI.cpp
+c:\users\baoha\documents\directx11_porcelain_tales\client\private\menuui.cpp(21): warning C4244: 'argument': conversion from 'const unsigned int' to 'float', possible loss of data
+  MainApp.cpp
+  LoadingUI.cpp
+c:\users\baoha\documents\directx11_porcelain_tales\client\private\loadingui.cpp(21): warning C4244: 'argument': conversion from 'const unsigned int' to 'float', possible loss of data
+  Loader.cpp
+  Level_Logo.cpp
+  Level_Loading.cpp
+  Level_GamePlay.cpp
+  HeartUI.cpp
+c:\users\baoha\documents\directx11_porcelain_tales\client\private\heartui.cpp(21): warning C4244: 'argument': conversion from 'const unsigned int' to 'float', possible loss of data
+  Vampire.cpp
   Player.cpp
 c:\users\baoha\documents\directx11_porcelain_tales\client\private\player.cpp(50): warning C4244: 'argument': conversion from 'Engine::_double' to 'float', possible loss of data
+  EyeUI.cpp
+c:\users\baoha\documents\directx11_porcelain_tales\client\private\eyeui.cpp(21): warning C4244: 'argument': conversion from 'const unsigned int' to 'float', possible loss of data
+  ExitUI.cpp
+c:\users\baoha\documents\directx11_porcelain_tales\client\private\exitui.cpp(21): warning C4244: 'argument': conversion from 'const unsigned int' to 'float', possible loss of data
+  ExitBtn.cpp
+c:\users\baoha\documents\directx11_porcelain_tales\client\private\exitbtn.cpp(22): warning C4244: 'argument': conversion from 'const unsigned int' to 'float', possible loss of data
+  Camera_Default.cpp
+  BackGround.cpp
+c:\users\baoha\documents\directx11_porcelain_tales\client\private\background.cpp(22): warning C4244: 'argument': conversion from 'const unsigned int' to 'float', possible loss of data
   Generating Code...
+DirectXTKd.lib(pch.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DirectXTKd.lib(pch.obj)' or at 'C:\Users\baoha\Documents\DirectX11_PorceLain_Tales\Client\Bin\DirectXTK.pdb'; linking object as if no debug info
+DirectXTKd.lib(ScreenGrab.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DirectXTKd.lib(ScreenGrab.obj)' or at 'C:\Users\baoha\Documents\DirectX11_PorceLain_Tales\Client\Bin\DirectXTK.pdb'; linking object as if no debug info
+DirectXTKd.lib(WICTextureLoader.obj) : warning LNK4099: PDB 'DirectXTK.pdb' was not found with 'DirectXTKd.lib(WICTextureLoader.obj)' or at 'C:\Users\baoha\Documents\DirectX11_PorceLain_Tales\Client\Bin\DirectXTK.pdb'; linking object as if no debug info
   Client.vcxproj -> C:\Users\baoha\Documents\DirectX11_PorceLain_Tales\Client\Default\..\Bin\Client.exe
   Client.vcxproj -> ..\Bin\Client.pdb (Full PDB)

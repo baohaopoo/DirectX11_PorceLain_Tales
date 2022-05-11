@@ -7,7 +7,6 @@ c:\users\baoha\documents\directx11_porcelain_tales\client\default\x64\debug\came
 c:\users\baoha\documents\directx11_porcelain_tales\client\default\x64\debug\exitbtn.obj
 c:\users\baoha\documents\directx11_porcelain_tales\client\default\x64\debug\exitui.obj
 c:\users\baoha\documents\directx11_porcelain_tales\client\default\x64\debug\eyeui.obj
-c:\users\baoha\documents\directx11_porcelain_tales\client\default\x64\debug\player.obj
 c:\users\baoha\documents\directx11_porcelain_tales\client\default\x64\debug\vampire.obj
 c:\users\baoha\documents\directx11_porcelain_tales\client\default\x64\debug\heartui.obj
 c:\users\baoha\documents\directx11_porcelain_tales\client\default\x64\debug\level_gameplay.obj
@@ -20,12 +19,14 @@ c:\users\baoha\documents\directx11_porcelain_tales\client\default\x64\debug\menu
 c:\users\baoha\documents\directx11_porcelain_tales\client\default\x64\debug\terrain.obj
 c:\users\baoha\documents\directx11_porcelain_tales\client\default\x64\debug\ui.obj
 c:\users\baoha\documents\directx11_porcelain_tales\client\default\x64\debug\client.obj
+c:\users\baoha\documents\directx11_porcelain_tales\client\default\x64\debug\player.obj
 c:\users\baoha\documents\directx11_porcelain_tales\client\bin\shader_vtxnortex.cso
 c:\users\baoha\documents\directx11_porcelain_tales\client\bin\shader_vtxtex.cso
 c:\users\baoha\documents\directx11_porcelain_tales\client\bin\client.ilk
 c:\users\baoha\documents\directx11_porcelain_tales\client\bin\client.exe
 c:\users\baoha\documents\directx11_porcelain_tales\client\bin\client.pdb
 c:\users\baoha\documents\directx11_porcelain_tales\client\default\x64\debug\client.res
+c:\users\baoha\documents\directx11_porcelain_tales\client\default\x64\debug\player.obj.enc
 c:\users\baoha\documents\directx11_porcelain_tales\client\default\..\bin\client.exe
 c:\users\baoha\documents\directx11_porcelain_tales\client\default\x64\debug\client.tlog\cl.command.1.tlog
 c:\users\baoha\documents\directx11_porcelain_tales\client\default\x64\debug\client.tlog\cl.read.1.tlog

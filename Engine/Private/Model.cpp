@@ -156,6 +156,29 @@ HRESULT CModel::Ready_Materials(const char* pModelFilePath)
 	return S_OK;
 }
 
+HRESULT CModel::Ready_Animations()
+{
+	//씬이 비어있으면 그냥 나가자
+	if (nullptr == m_pScene)
+		return E_FAIL;
+
+
+	//
+	m_iNumAnimations = m_pScene->mNumAnimations;
+
+	for (_uint i = 0; i < m_iNumAnimations; ++i)
+	{
+		aiAnimation* pAIAnimation = m_pScene->mAnimations[i];
+		CAnimation* pAnimation = CAnimation::Create(pAIAnimation);
+		if (nullptr == pAnimation)
+			return E_FAIL;
+
+		m_Animations.push_back(pAnimation);
+
+	}
+	return S_OK;
+}
+
 CModel * CModel::Create(ID3D11Device * pDevice, ID3D11DeviceContext * pDeviceContext, TYPE eType, const char * pModelFilePath, const char * pModelFileName, _fmatrix PivotMatrix)
 {
 	CModel*	pInstance = new CModel(pDevice, pDeviceContext);

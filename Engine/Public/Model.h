@@ -50,9 +50,20 @@ private:
 	vector<MODELMATERIAL>					m_Materials;
 	typedef vector<MODELMATERIAL>			MATERIALS;
 
+
+	//애니메이션용
+
+private:
+	_uint	m_iNumAnimations = 0;
+	_uint	m_iCurrentAnimIndex = 0;
+	vector<class CAnimation*>	m_Animations;
+	typedef vector<class CAnimation*>	ANIMATIONS;
+
+
 private:
 	HRESULT Ready_MeshContainers();
 	HRESULT Ready_Materials(const char* pModelFilePath);
+	HRESULT Ready_Animations();
 
 public:
 	static CModel* Create(ID3D11Device* pDevice, ID3D11DeviceContext* pDeviceContext, TYPE eType, const char* pModelFilePath, const char* pModelFileName, _fmatrix PivotMatrix = XMMatrixIdentity());
