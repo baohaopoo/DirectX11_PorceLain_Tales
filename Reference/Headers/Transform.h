@@ -14,6 +14,7 @@ public:
 	{
 		_double			SpeedPerSec;
 		_double			RotationPerSec;
+
 	}TRANSFORMDESC;
 
 private:

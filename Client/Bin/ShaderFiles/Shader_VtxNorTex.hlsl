@@ -122,11 +122,13 @@ PS_OUT PS_MAIN_TERRAIN_DIRECTIONAL(PS_IN In)
 
 	float		fShade = max(dot(normalize(g_vLightDir) * -1.f, In.vNormal), 0.f);
 
-	vector		vSourDiffuse = g_SourDiffuseTexture.Sample(DefaultSampler, In.vTexUV * 10.f);
+	//색 뽑기 위해서 하는 것.
+	vector		vSourDiffuse = g_SourDiffuseTexture.Sample(DefaultSampler, In.vTexUV * 10.f); //샘플러 
 	vector		vDestDiffuse = g_DestDiffuseTexture.Sample(DefaultSampler, In.vTexUV * 10.f);
 	vector		vMask = g_MaskTexture.Sample(DefaultSampler, In.vTexUV);
 	vector		vBrush = vector(0.f, 0.f, 0.f, 0.f);
 
+	//조명
 	if (g_vBrushPosition.x - g_fBrushRange < In.vWorldPos.x && In.vWorldPos.x <= g_vBrushPosition.x + g_fBrushRange && 
 		g_vBrushPosition.z - g_fBrushRange < In.vWorldPos.z && In.vWorldPos.z <= g_vBrushPosition.z + g_fBrushRange)
 	{
@@ -144,12 +146,14 @@ PS_OUT PS_MAIN_TERRAIN_DIRECTIONAL(PS_IN In)
 
 	float		fSpecular = pow(max(dot(normalize(vReflect) * -1.f, vLook), 0.f), g_fPower);
 
+	//그냥 쓰면, 흙색으로 나오는데 조명연산 곱해줘서 우리가 아는 텍스쳐가 나온것.
 	Out.vColor = (g_vLightDiffuse * vMtrlDiffuse) * saturate(fShade + (g_vLightAmbient * g_vMtrlAmbient)) +
 		(g_vLightSpecular * g_vMtrlSpecular) * fSpecular;
 
 	return Out;
 }
 
+//점 조명
 PS_OUT PS_MAIN_TERRAIN_POINT(PS_IN In)
 {
 	PS_OUT			Out;
@@ -174,7 +178,7 @@ PS_OUT PS_MAIN_TERRAIN_POINT(PS_IN In)
 	return Out;
 }
 
-
+//Model Directional 조명
 PS_OUT PS_MAIN_MODEL_DIRECTIONAL(PS_IN In)
 {
 	PS_OUT			Out = (PS_OUT)0;

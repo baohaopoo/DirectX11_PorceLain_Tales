@@ -1,7 +1,8 @@
-﻿  HeartUI.cpp
-c:\users\baoha\documents\directx11_porcelain_tales\client\private\heartui.cpp(21): warning C4244: 'argument': conversion from 'const unsigned int' to 'float', possible loss of data
-  EyeUI.cpp
-c:\users\baoha\documents\directx11_porcelain_tales\client\private\eyeui.cpp(21): warning C4244: 'argument': conversion from 'const unsigned int' to 'float', possible loss of data
+﻿  Loader.cpp
+  Generating Code...
+  Compiling...
+  Player.cpp
+c:\users\baoha\documents\directx11_porcelain_tales\client\private\player.cpp(50): warning C4244: 'argument': conversion from 'Engine::_double' to 'float', possible loss of data
   Generating Code...
   Client.vcxproj -> C:\Users\baoha\Documents\DirectX11_PorceLain_Tales\Client\Default\..\Bin\Client.exe
   Client.vcxproj -> ..\Bin\Client.pdb (Full PDB)

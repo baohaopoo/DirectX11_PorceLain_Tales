@@ -28,6 +28,10 @@ HRESULT Player::NativeConstruct(void * pArg)
 	TransformDesc.SpeedPerSec = 5.0f;
 	TransformDesc.RotationPerSec = XMConvertToRadians(90.0f);
 
+
+	//CTransform* m_pTransform = nullptr; /*(CTransform*)pGameInstance->Get_Component(LEVEL_LOBBY, TEXT("Layer_UIObject"), TEXT("Com_Transform"));*/
+	//m_pTransform->Set_State(CTransform::STATE_RIGHT, {-90.f, 0.f,0.f});
+
 	if (FAILED(__super::NativeConstruct(pArg, &TransformDesc)))
 		return E_FAIL;
 
@@ -42,6 +46,8 @@ HRESULT Player::NativeConstruct(void * pArg)
 void Player::Tick(_double TimeDelta)
 {
 	__super::Tick(TimeDelta);
+
+	KeyInput(TimeDelta);
 
 }
 
@@ -68,10 +74,12 @@ HRESULT Player::Render()
 
 	_uint		iNumMeshContainers = m_pModelCom->Get_NumMeshContainer();
 
+	//dx9과 다른 bind 방식 - 주요 차이점이다.
 	for (_uint i = 0; i < iNumMeshContainers; ++i)
 	{
-		if (FAILED(m_pModelCom->Bind_Material_OnShader(m_pShaderCom, aiTextureType_DIFFUSE, "g_DiffuseTexture", i)))
-			return E_FAIL;
+		//Diffuse 는 한마디 텍스쳐 전체다. 
+		//if (FAILED(m_pModelCom->Bind_Material_OnShader(m_pShaderCom, aiTextureType_DIFFUSE, "g_DiffuseTexture", 0)))
+		//	return E_FAIL;
 
 		if (FAILED(m_pShaderCom->Begin(2)))
 			return E_FAIL;
@@ -81,6 +89,31 @@ HRESULT Player::Render()
 	}
 
 	return S_OK;
+}
+
+void Player::KeyInput(float TimeDelta)
+{
+	CGameInstance*		pGameInstance = CGameInstance::GetInstance();
+
+
+	Safe_AddRef(pGameInstance);
+	if (pGameInstance->Get_DIKeyState(VK_UP) & 0x8000)
+	{
+		m_pTransformCom->Go_Straight(TimeDelta);
+	}
+	if (GetKeyState(VK_DOWN) & 0x8000)
+	{
+		m_pTransformCom->Go_BackWard(TimeDelta);
+	}
+	if (GetKeyState(VK_LEFT) & 0x8000)
+	{
+		m_pTransformCom->Go_Left(TimeDelta);
+	}
+	if (GetKeyState(VK_RIGHT) & 0x8000)
+	{
+		m_pTransformCom->Go_Right(TimeDelta);
+	}
+	Safe_Release(pGameInstance);
 }
 
 HRESULT Player::SetUp_Components()
@@ -97,6 +130,7 @@ HRESULT Player::SetUp_Components()
 	if (FAILED(__super::SetUp_Components(TEXT("Com_Model"), LEVEL_GAMEPLAY, TEXT("Prototype_Component_Model_Player"), (CComponent**)&m_pModelCom)))
 		return E_FAIL;
 
+	//월드 매트릭스 바인딩.
 	return S_OK;
 }
 

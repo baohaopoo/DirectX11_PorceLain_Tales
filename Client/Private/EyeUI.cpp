@@ -61,7 +61,7 @@ void EyeUI::LateTick(_double TimeDelta)
 	__super::LateTick(TimeDelta);
 
 	if (nullptr != m_pRendererCom)
-		m_pRendererCom->Add_RenderGroup(CRenderer::GROUP_PRIORITY, this);
+		m_pRendererCom->Add_RenderGroup(CRenderer::GROUP_UI, this);
 }
 
 HRESULT EyeUI::Render()

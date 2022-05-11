@@ -112,12 +112,22 @@ HRESULT CLoader::Loading_ForGamePlayLevel()
 
 
  	//if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Model_Player"),
-		//CModel::Create(m_pDevice, m_pDeviceContext, CModel::TYPE_NONANIM, "../Bin/Resources/Meshes/Player/", "KabouterPlayer.fbx", PivotMatrix))))
+		//CModel::Create(m_pDevice, m_pDeviceContext, CModel::TYPE_NONANIM, "../Bin/Resources/Meshes/Player/", "Player4.fbx", PivotMatrix))))
 		//return E_FAIL;
 
 
+	////뱀파이어 베드
+	//if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Model_Player"),
+	//	CModel::Create(m_pDevice, m_pDeviceContext, CModel::TYPE_NONANIM, "../Bin/Resources/Meshes/VampireBed/", "vampireBed.fbx", PivotMatrix))))
+	//	return E_FAIL;
+
+
+	/* For. Prototype_Component_Model_Player */
+	PivotMatrix = XMMatrixScaling(0.05f, 0.05f, 0.05f) * XMMatrixRotationY(XMConvertToRadians(180.0f));
+
+	//플레이어 메쉬 로드
 	if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Model_Player"),
-		CModel::Create(m_pDevice, m_pDeviceContext, CModel::TYPE_NONANIM, "../Bin/Resources/Meshes/VampireBed/", "vampireBed.fbx", PivotMatrix))))
+		CModel::Create(m_pDevice, m_pDeviceContext, CModel::TYPE_NONANIM, "../Bin/Resources/Meshes/Player/", "Player6.fbx", PivotMatrix))))
 		return E_FAIL;
 
 	///* For. Prototype_Component_VIBuffer_Cube */

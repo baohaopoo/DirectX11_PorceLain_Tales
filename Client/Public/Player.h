@@ -24,11 +24,16 @@ public:
 	virtual HRESULT Render() override;
 
 private:
+	void KeyInput(float TimeDelta);
+
+
+private:
 	CRenderer*			m_pRendererCom = nullptr;
 	CShader*			m_pShaderCom = nullptr;
 	CModel*				m_pModelCom = nullptr;
 
 private:
+
 	ID3D11ShaderResourceView*		m_pMaskSRV = nullptr;
 
 private:

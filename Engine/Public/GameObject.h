@@ -37,6 +37,8 @@ protected:
 
 protected:
 	HRESULT SetUp_Components(const _tchar* pComponentTag, _uint iLevelIndex, const _tchar* pPrototypeTag, CComponent** ppOut, void* pArg = nullptr);
+	//°Ù ÄÄÆ÷³ÍÆ® ¸¸µé±Í..
+
 
 private:
 	CComponent* Find_Component(const _tchar* pComponentTag);

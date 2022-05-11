@@ -60,8 +60,9 @@ void HeartUI::LateTick(_double TimeDelta)
 {
 	__super::LateTick(TimeDelta);
 
+	//원래 RenderGroup Prioirty에 있었다.
 	if (nullptr != m_pRendererCom)
-		m_pRendererCom->Add_RenderGroup(CRenderer::GROUP_PRIORITY, this);
+		m_pRendererCom->Add_RenderGroup(CRenderer::GROUP_UI, this);
 }
 
 HRESULT HeartUI::Render()

@@ -94,6 +94,16 @@ HRESULT CLevel_GamePlay::Ready_Layer_Camera(const _tchar * pLayerTag)
 	CCamera::CAMERADESC			CameraDesc;
 	ZeroMemory(&CameraDesc, sizeof(CCamera::CAMERADESC));
 
+	//여기서 카메라를 바꿔줘보자. 
+	//Player의 위치를 던져줬음 한다.
+
+	//CComponent*		m_pTransform = (CTransform*)pGameInstance->Get_Compo
+	//m_pTransform->Set_State(CTransform::STATE_POSITION, { terrainpos.x, terrainpos.y, terrainpos.z });
+
+	//////플레이어..우쩌지..
+	//CTransform* TargetTransform = (CTransform*)pGameInstance->Get_Component
+/*
+	XMMATRIX* m_pTransform = (CTransform*)->Get_CamPosition();*/
 	CameraDesc.vEye = _float3(0.f, 10.f, -15.f);
 	CameraDesc.vAt = _float3(0.f, 0.f, 0.f);
 	CameraDesc.vAxisY = _float3(0.f, 1.f, 0.f);
@@ -115,6 +125,8 @@ HRESULT CLevel_GamePlay::Ready_Layer_Player(const _tchar * pLayerTag)
 	CGameInstance*		pGameInstance = CGameInstance::GetInstance();
 	Safe_AddRef(pGameInstance);
 
+	
+
 	if (FAILED(pGameInstance->Add_GameObjectToLayer(LEVEL_GAMEPLAY, pLayerTag, TEXT("Prototype_GameObject_Player"))))
 		return E_FAIL;
 
@@ -133,6 +145,9 @@ HRESULT CLevel_GamePlay::Ready_Layer_BackGround(const _tchar * pLayerTag)
 
 	if (FAILED(pGameInstance->Add_GameObjectToLayer(LEVEL_GAMEPLAY, pLayerTag, TEXT("Prototype_GameObject_ForkLift"))))
 		return E_FAIL;
+
+
+
 
 	Safe_Release(pGameInstance);
 

@@ -45,7 +45,6 @@ void CVampire::Tick(_double TimeDelta)
 {
 	__super::Tick(TimeDelta);
 
-	KeyInput(TimeDelta);
 }
 
 void CVampire::LateTick(_double TimeDelta)
