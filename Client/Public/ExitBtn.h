@@ -39,7 +39,10 @@ private:
 
 public:
 	HRESULT SetUp_Components();
-
+private:
+	bool isChange = false;
+public:
+	void ChangeBtn();
 public:
 	static ExitBtn* Create(ID3D11Device* pDeviceOut, ID3D11DeviceContext* pDeviceContextOut);
 	virtual CGameObject* Clone(void* pArg);

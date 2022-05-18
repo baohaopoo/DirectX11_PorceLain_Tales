@@ -38,11 +38,11 @@ HRESULT ExitBtn::NativeConstruct(void* pArg)
 
 	//위치
 	m_fX = 233.f;
-	m_fY = 300.f;
+	m_fY = 100.f;
 
 	//사이즈
-	m_fSizeX = 255;
-	m_fSizeY = 600;
+	m_fSizeX = 100;
+	m_fSizeY = 100;
 
 	return S_OK;
 }
@@ -54,6 +54,10 @@ void ExitBtn::Tick(_double TimeDelta)
 
 	m_pTransformCom->Scaled(_float3(m_fSizeX, m_fSizeY, 1.f));
 	m_pTransformCom->Set_State(CTransform::STATE_POSITION, XMVectorSet(m_fX - g_iWinCX * 0.5f, -m_fY + g_iWinCY * 0.5f, 0.f, 1.f));
+
+	if (GetKeyState('Q') & 0x8000)
+		isChange = true;
+
 }
 
 void ExitBtn::LateTick(_double TimeDelta)
@@ -61,7 +65,7 @@ void ExitBtn::LateTick(_double TimeDelta)
 	__super::LateTick(TimeDelta);
 
 	if (nullptr != m_pRendererCom)
-		m_pRendererCom->Add_RenderGroup(CRenderer::GROUP_PRIORITY, this);
+		m_pRendererCom->Add_RenderGroup(CRenderer::GROUP_UI, this);
 }
 
 HRESULT ExitBtn::Render()
@@ -90,7 +94,7 @@ HRESULT ExitBtn::Render()
 	if (FAILED(m_pTextureCom->SetUp_ShaderResourceView(m_pShaderCom, "g_Texture", 0)))
 		return E_FAIL;
 
-	if (FAILED(m_pShaderCom->Begin(0)))
+	if (FAILED(m_pShaderCom->Begin(1)))
 		return E_FAIL;
 
 	if (FAILED(m_pVIBufferCom->Render()))
@@ -113,9 +117,25 @@ HRESULT ExitBtn::SetUp_Components()
 	if (FAILED(__super::SetUp_Components(TEXT("Com_VIBuffer"), LEVEL_STATIC, TEXT("Prototype_Component_VIBuffer_Rect"), (CComponent**)&m_pVIBufferCom)))
 		return E_FAIL;
 
-	/* For.Com_Texture */
-	if (FAILED(__super::SetUp_Components(TEXT("Com_Texture"), LEVEL_LOGO, TEXT("Prototype_Component_Texture_MenuUI"), (CComponent**)&m_pTextureCom)))
-		return E_FAIL;
+
+
+ 	if (isChange)
+	{
+		/* For.Com_Texture */
+		if (FAILED(__super::SetUp_Components(TEXT("Com_Texture"), LEVEL_LOGO, TEXT("Prototype_Component_Texture_PressPlayBtnUI"), (CComponent**)&m_pTextureCom)))
+			return E_FAIL;
+
+
+		isChange = false;
+	}
+	else {
+		/* For.Com_Texture */
+		if (FAILED(__super::SetUp_Components(TEXT("Com_Texture"), LEVEL_LOGO, TEXT("Prototype_Component_Texture_PlayBtnUI"), (CComponent**)&m_pTextureCom)))
+			return E_FAIL;
+	}
+
+
+
 
 	return S_OK;
 }

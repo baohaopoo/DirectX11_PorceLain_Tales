@@ -91,6 +91,9 @@
     <ClCompile Include="..\private\Channel.cpp">
       <Filter>01.Utility\03.Component\Model\Model\Channel</Filter>
     </ClCompile>
+    <ClCompile Include="..\Private\HierarchyNode.cpp">
+      <Filter>01.Utility\03.Component\Model\Model\HierarchyNode</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Public\Engine_Defines.h">
@@ -195,6 +198,9 @@
     <ClInclude Include="..\public\Channel.h">
       <Filter>01.Utility\03.Component\Model\Model\Channel</Filter>
     </ClInclude>
+    <ClInclude Include="..\Public\HierarchyNode.h">
+      <Filter>01.Utility\03.Component\Model\Model\HierarchyNode</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="99.Defines">
@@ -295,6 +301,9 @@
     </Filter>
     <Filter Include="01.Utility\03.Component\Model\Model\Channel">
       <UniqueIdentifier>{0e41a815-cdc0-4595-8d5f-4020ad43cc5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Utility\03.Component\Model\Model\HierarchyNode">
+      <UniqueIdentifier>{d6c36ec6-fca1-4842-b415-f09d35456126}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -1,12 +1,12 @@
 #include "..\Public\MeshContainer.h"
-
+#include "HierarchyNode.h"
 CMeshContainer::CMeshContainer(ID3D11Device * pDevice, ID3D11DeviceContext * pDeviceContext)
 	: CVIBuffer(pDevice, pDeviceContext)	
 {
 
 }
 
-HRESULT CMeshContainer::NativeConstruct_Prototype(CModel::TYPE eType, aiMesh * pAIMesh, _float4x4 PivotMatrix)
+HRESULT CMeshContainer::NativeConstruct_Prototype(CModel::TYPE eType, aiMesh * pAIMesh, _float4x4 PivotMatrix, vector<HierarchyNode*>	HierarchyNodes)
 {
 	m_eType = eType;
 	m_PivotMatrix = PivotMatrix;
@@ -18,7 +18,7 @@ HRESULT CMeshContainer::NativeConstruct_Prototype(CModel::TYPE eType, aiMesh * p
 		hr = Create_VertexBuffer_NonAnim(pAIMesh);
 	
 	else
-		hr = Create_VertexBuffer_Anim(pAIMesh);
+		hr = Create_VertexBuffer_Anim(pAIMesh, HierarchyNodes);
 #pragma endregion
 
 
@@ -60,10 +60,6 @@ HRESULT CMeshContainer::NativeConstruct_Prototype(CModel::TYPE eType, aiMesh * p
 HRESULT CMeshContainer::Create_VertexBuffer_NonAnim(aiMesh* pAIMesh)
 {
 	m_iMaterialIndex = pAIMesh->mMaterialIndex;
-
-	/*pAIMesh->mNumBones;
-	aiBone* pAIMesh->mBones[]*/
-
 	m_iNumVertices = pAIMesh->mNumVertices;
 	m_iNumPrimitive = pAIMesh->mNumFaces;
 	m_iStride = sizeof(VTXNORTEX);
@@ -99,9 +95,10 @@ HRESULT CMeshContainer::Create_VertexBuffer_NonAnim(aiMesh* pAIMesh)
 	return S_OK;
 }
 
-HRESULT CMeshContainer::Create_VertexBuffer_Anim(aiMesh* pAIMesh)
+HRESULT CMeshContainer::Create_VertexBuffer_Anim(aiMesh* pAIMesh, vector<HierarchyNode*>	HierarchyNodes)
 {
-	/*m_iNumVertices = pAIMesh->mNumVertices;
+	m_iMaterialIndex = pAIMesh->mMaterialIndex;
+	m_iNumVertices = pAIMesh->mNumVertices;
 	m_iNumPrimitive = pAIMesh->mNumFaces;
 	m_iStride = sizeof(VTXANIMMODEL);
 	m_iNumVBuffers = 1;
@@ -115,6 +112,7 @@ HRESULT CMeshContainer::Create_VertexBuffer_Anim(aiMesh* pAIMesh)
 	m_VBDesc.MiscFlags = 0;
 
 	VTXANIMMODEL*		pVertices = new VTXANIMMODEL[m_iNumVertices];
+	ZeroMemory(pVertices, sizeof(VTXANIMMODEL) * m_iNumVertices);
 
 	for (_uint i = 0; i < m_iNumVertices; ++i)
 	{
@@ -123,20 +121,112 @@ HRESULT CMeshContainer::Create_VertexBuffer_Anim(aiMesh* pAIMesh)
 		memcpy(&pVertices[i].vTexUV, &pAIMesh->mTextureCoords[0][i], sizeof(_float2));
 	}
 
+	if (FAILED(Create_SkinnedInfo(pAIMesh, pVertices, HierarchyNodes)))
+		return E_FAIL;
+
 	ZeroMemory(&m_VBSubResourceData, sizeof(D3D11_SUBRESOURCE_DATA));
 	m_VBSubResourceData.pSysMem = pVertices;
 
 	if (FAILED(__super::Create_VertexBuffer()))
 		return E_FAIL;
-*/
+
 	return S_OK;
 }
 
-CMeshContainer * CMeshContainer::Create(ID3D11Device * pDevice, ID3D11DeviceContext * pDeviceContext, CModel::TYPE eType, aiMesh * pAIMesh, _float4x4 PivotMatrix)
+HRESULT CMeshContainer::Create_SkinnedInfo(aiMesh * pAIMesh, VTXANIMMODEL * pVertices, vector<HierarchyNode*> HierarchyNodes)
+{
+	m_iNumBones = pAIMesh->mNumBones;
+
+	if (0 == m_iNumBones)
+	{
+		auto	iter = find_if(HierarchyNodes.begin(), HierarchyNodes.end(), [&](HierarchyNode* pNode)
+		{
+			return !strcmp(pAIMesh->mName.data, pNode->Get_Name());
+		});
+
+		if (iter == HierarchyNodes.end())
+			return E_FAIL;
+
+		m_pHierarchyNode = *iter;
+
+		Safe_AddRef(*iter);
+
+		return S_OK;
+	}
+
+	for (_uint i = 0; i < m_iNumBones; ++i)
+	{
+		aiBone*		pAIBone = pAIMesh->mBones[i];
+
+		auto	iter = find_if(HierarchyNodes.begin(), HierarchyNodes.end(), [&](HierarchyNode* pNode)
+		{
+			return !strcmp(pAIBone->mName.data, pNode->Get_Name());
+		});
+
+		if (iter == HierarchyNodes.end())
+			return E_FAIL;
+
+		_float4x4	OffsetMatrix;
+		memcpy(&OffsetMatrix, &pAIBone->mOffsetMatrix, sizeof(_float4x4));
+
+		(*iter)->Set_OffsetMatrix(XMMatrixTranspose(XMLoadFloat4x4(&OffsetMatrix)));
+
+		m_MeshContainerNodes.push_back((*iter));
+
+		Safe_AddRef(*iter);
+
+		for (_uint j = 0; j < pAIBone->mNumWeights; ++j)
+		{
+			if (0.0f == pVertices[pAIBone->mWeights[j].mVertexId].vBlendWeight.x)
+			{
+				pVertices[pAIBone->mWeights[j].mVertexId].vBlendIndex.x = i;
+				pVertices[pAIBone->mWeights[j].mVertexId].vBlendWeight.x = pAIBone->mWeights[j].mWeight;
+			}
+
+			else if (0.0f == pVertices[pAIBone->mWeights[j].mVertexId].vBlendWeight.y)
+			{
+				pVertices[pAIBone->mWeights[j].mVertexId].vBlendIndex.y = i;
+				pVertices[pAIBone->mWeights[j].mVertexId].vBlendWeight.y = pAIBone->mWeights[j].mWeight;
+			}
+
+			else if (0.0f == pVertices[pAIBone->mWeights[j].mVertexId].vBlendWeight.z)
+			{
+				pVertices[pAIBone->mWeights[j].mVertexId].vBlendIndex.z = i;
+				pVertices[pAIBone->mWeights[j].mVertexId].vBlendWeight.z = pAIBone->mWeights[j].mWeight;
+			}
+
+			else
+			{
+				pVertices[pAIBone->mWeights[j].mVertexId].vBlendIndex.w = i;
+				pVertices[pAIBone->mWeights[j].mVertexId].vBlendWeight.w = pAIBone->mWeights[j].mWeight;
+			}
+		}
+	}
+	return S_OK;
+}
+
+HRESULT CMeshContainer::Get_BoneMatrices(_float4x4 * pBoneMatrices, _fmatrix PivotMatrix)
+{
+	if (0 == m_iNumBones)
+	{
+
+		XMStoreFloat4x4(&pBoneMatrices[0], XMMatrixTranspose(m_pHierarchyNode->Get_CombinedMatrix() * PivotMatrix));
+	}
+
+	_uint		iIndex = 0;
+	for (auto& pHierarchyNode : m_MeshContainerNodes)
+	{
+		XMStoreFloat4x4(&pBoneMatrices[iIndex++], XMMatrixTranspose(pHierarchyNode->Get_OffsetMatrix() * pHierarchyNode->Get_CombinedMatrix() * PivotMatrix));
+	}
+
+	return S_OK;
+}
+
+CMeshContainer * CMeshContainer::Create(ID3D11Device * pDevice, ID3D11DeviceContext * pDeviceContext, CModel::TYPE eType, aiMesh * pAIMesh, _float4x4 PivotMatrix, vector<class HierarchyNode*> HierarchyNodes)
 {
 	CMeshContainer*	pInstance = new CMeshContainer(pDevice, pDeviceContext);
 	
-	if (FAILED(pInstance->NativeConstruct_Prototype(eType, pAIMesh, PivotMatrix)))
+	if (FAILED(pInstance->NativeConstruct_Prototype(eType, pAIMesh, PivotMatrix, HierarchyNodes)))
 	{
 		MSG_BOX(TEXT("Failed to Created CMeshContainer"));
 		Safe_Release(pInstance);
@@ -161,4 +251,12 @@ CComponent * CMeshContainer::Clone(void * pArg)
 void CMeshContainer::Free()
 {
 	__super::Free();
+
+	for (auto& pHierarchyNode : m_MeshContainerNodes)
+		Safe_Release(pHierarchyNode);
+
+	m_MeshContainerNodes.clear();
+
+
+	Safe_Release(m_pHierarchyNode);
 }

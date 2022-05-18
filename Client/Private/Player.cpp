@@ -84,7 +84,7 @@ HRESULT Player::Render()
 		if (FAILED(m_pShaderCom->Begin(2)))
 			return E_FAIL;
 
-		if (FAILED(m_pModelCom->Render(i)))
+		if (FAILED(m_pModelCom->Render(m_pShaderCom, "g_BoneMatrices", i, 0)))
 			return E_FAIL;
 	}
 

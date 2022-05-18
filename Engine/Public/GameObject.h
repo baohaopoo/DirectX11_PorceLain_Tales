@@ -15,6 +15,8 @@ public:
 	class CComponent* Get_Component(const _tchar* pComponentTag) {
 		return Find_Component(pComponentTag);
 	}
+public:
+	void Delete_Component(const _tchar* pComponentTag);
 
 public:
 	virtual HRESULT NativeConstruct_Prototype();

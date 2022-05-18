@@ -36,11 +36,11 @@ HRESULT CBackGround::NativeConstruct(void * pArg)
 	if (FAILED(SetUp_Components()))
 		return E_FAIL;
 
-	m_fX = g_iWinCX * 0.5f;
-	m_fY = g_iWinCY * 0.5f;
+	m_fX = 231.f;
+	m_fY = 284.f;
 
-	m_fSizeX = g_iWinCX;
-	m_fSizeY = g_iWinCY;
+	m_fSizeX = 252;
+	m_fSizeY = 570;
 
 	return S_OK;
 }
@@ -60,7 +60,7 @@ void CBackGround::LateTick(_double TimeDelta)
 	__super::LateTick(TimeDelta);
 
 	if (nullptr != m_pRendererCom)
-		m_pRendererCom->Add_RenderGroup(CRenderer::GROUP_PRIORITY, this);
+		m_pRendererCom->Add_RenderGroup(CRenderer::GROUP_UI, this);
 }
 
 HRESULT CBackGround::Render()
@@ -89,7 +89,8 @@ HRESULT CBackGround::Render()
 	if (FAILED(m_pTextureCom->SetUp_ShaderResourceView(m_pShaderCom, "g_Texture", 0)))
 		return E_FAIL;
 
-	if (FAILED(m_pShaderCom->Begin(0)))
+	//pass를 꼭 바꿔주야해 UI라면..
+	if (FAILED(m_pShaderCom->Begin(1)))
 		return E_FAIL;
 	
 	if (FAILED(m_pVIBufferCom->Render()))
@@ -114,7 +115,7 @@ HRESULT CBackGround::SetUp_Components()
 
 
 	/* For.Com_Texture */
-	if (FAILED(__super::SetUp_Components(TEXT("Com_Texture"), LEVEL_LOGO, TEXT("Prototype_Component_Texture_Default"), (CComponent**)&m_pTextureCom)))
+	if (FAILED(__super::SetUp_Components(TEXT("Com_Texture"), LEVEL_LOGO, TEXT("Prototype_Component_Texture_LogoUI"), (CComponent**)&m_pTextureCom)))
 		return E_FAIL;
 
 	return S_OK;

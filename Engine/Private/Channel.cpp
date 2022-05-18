@@ -1,4 +1,5 @@
 #include "..\Public\Channel.h"
+#include "HierarchyNode.h"
 
 CChannel::CChannel()
 {
@@ -12,6 +13,51 @@ HRESULT CChannel::NativeConstruct(aiNodeAnim* pAIChannel)
 		return E_FAIL;
 
 	return S_OK;
+}
+
+void CChannel::Compute_TransformationMatrix(_double PlayTime)
+{
+	while (m_iCurrentKeyFrame + 1 < m_KeyFrames.size())
+	{
+		if (PlayTime > m_KeyFrames[m_iCurrentKeyFrame + 1]->Time)
+			++m_iCurrentKeyFrame;
+		else
+			break;
+	}
+
+	KEYFRAME*	pLastKeyFrame = m_KeyFrames.back();
+
+	_vector		vScale, vRotation, vTranslation;
+
+	if (PlayTime > pLastKeyFrame->Time)
+	{
+		vScale = XMLoadFloat3(&pLastKeyFrame->vScale);
+		vRotation = XMLoadFloat4(&pLastKeyFrame->vRotation);
+		vTranslation = XMLoadFloat3(&pLastKeyFrame->vTranslation);
+		vTranslation = XMVectorSetW(vTranslation, 1.f);
+	}
+
+	else
+	{
+		_double		Ratio = (PlayTime - m_KeyFrames[m_iCurrentKeyFrame]->Time) / (m_KeyFrames[m_iCurrentKeyFrame + 1]->Time - m_KeyFrames[m_iCurrentKeyFrame]->Time);
+
+		_vector		vSourScale = XMLoadFloat3(&m_KeyFrames[m_iCurrentKeyFrame]->vScale);
+		_vector		vSourRotation = XMLoadFloat4(&m_KeyFrames[m_iCurrentKeyFrame]->vRotation);
+		_vector		vSourTranslation = XMLoadFloat3(&m_KeyFrames[m_iCurrentKeyFrame]->vTranslation);
+
+		_vector		vDestScale = XMLoadFloat3(&m_KeyFrames[m_iCurrentKeyFrame + 1]->vScale);
+		_vector		vDestRotation = XMLoadFloat4(&m_KeyFrames[m_iCurrentKeyFrame + 1]->vRotation);
+		_vector		vDestTranslation = XMLoadFloat3(&m_KeyFrames[m_iCurrentKeyFrame + 1]->vTranslation);
+
+		vScale = XMVectorLerp(vSourScale, vDestScale, (_float)Ratio);
+		vRotation = XMQuaternionSlerp(vSourRotation, vDestRotation, (_float)Ratio);
+		vTranslation = XMVectorLerp(vSourTranslation, vDestTranslation, (_float)Ratio);
+		vTranslation = XMVectorSetW(vTranslation, 1.f);
+	}
+
+	if (nullptr != m_pHierarchyNode)
+		m_pHierarchyNode->Set_TransformationMatrix(XMMatrixAffineTransformation(vScale, XMVectorSet(0.f, 0.f, 0.f, 1.f), vRotation, vTranslation));
+
 }
 
 HRESULT CChannel::Ready_KeyFrames(aiNodeAnim * pAIChannel)

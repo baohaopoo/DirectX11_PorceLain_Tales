@@ -59,20 +59,20 @@ HRESULT CLoader::Loading_ForGamePlayLevel()
 
 	lstrcpy(m_szLoading, TEXT("텍스쳐를 로드중입니다. "));
 
-	/* For. Prototype_Component_Texture_Terrain */
-	if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Texture_Terrain"),
-		CTexture::Create(m_pDevice, m_pDeviceContext, TEXT("../Bin/Resources/Textures/Terrain/Tile%d.dds"), 2))))
-		return E_FAIL;
+	///* For. Prototype_Component_Texture_Terrain */
+	//if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Texture_Terrain"),
+	//	CTexture::Create(m_pDevice, m_pDeviceContext, TEXT("../Bin/Resources/Textures/Terrain/Tile%d.dds"), 2))))
+	//	return E_FAIL;
 
-	/* For. Prototype_Component_Texture_TerrainMask */
-	if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Texture_TerrainMask"),
-		CTexture::Create(m_pDevice, m_pDeviceContext, TEXT("../Bin/Resources/Textures/Terrain/Filter.bmp"), 1))))
-		return E_FAIL;
+	///* For. Prototype_Component_Texture_TerrainMask */
+	//if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Texture_TerrainMask"),
+	//	CTexture::Create(m_pDevice, m_pDeviceContext, TEXT("../Bin/Resources/Textures/Terrain/Filter.bmp"), 1))))
+	//	return E_FAIL;
 
-	/* For. Prototype_Component_Texture_Brush */
-	if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Texture_Brush"),
-		CTexture::Create(m_pDevice, m_pDeviceContext, TEXT("../Bin/Resources/Textures/Terrain/Brush.png"), 1))))
-		return E_FAIL;
+	///* For. Prototype_Component_Texture_Brush */
+	//if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Texture_Brush"),
+	//	CTexture::Create(m_pDevice, m_pDeviceContext, TEXT("../Bin/Resources/Textures/Terrain/Brush.png"), 1))))
+	//	return E_FAIL;
 
 
 
@@ -90,50 +90,42 @@ HRESULT CLoader::Loading_ForGamePlayLevel()
 
 	
 
-	lstrcpy(m_szLoading, TEXT("모델을 로드중입니다. "));
-
-	/* For. Prototype_Component_VIBuffer_Terrain*/
-	if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_VIBuffer_Terrain"),
-		CVIBuffer_Terrain::Create(m_pDevice, m_pDeviceContext, TEXT("../Bin/Resources/Textures/Terrain/Height.bmp")))))
-		return E_FAIL;
+	lstrcpy(m_szLoading, TEXT("모델을 로드중입니다."));
 
 	_matrix			PivotMatrix;
 
+	//애니메이션 없는 메쉬.
 	/* For. Prototype_Component_Model_ForkLift */
-	PivotMatrix = XMMatrixScaling(0.01f, 0.01f, 0.01f) * XMMatrixRotationY(XMConvertToRadians(180.0f));
+	//PivotMatrix = XMMatrixScaling(0.01f, 0.01f, 0.01f) * XMMatrixRotationY(XMConvertToRadians(180.0f));
 
 
-	//메쉬 로드.
+	//////메쉬 로드.
 
-	if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Model_ForkLift"),
-		CModel::Create(m_pDevice, m_pDeviceContext, CModel::TYPE_NONANIM, "../Bin/Resources/Meshes/Vampire/", "vampire2.fbx", PivotMatrix))))
-		return E_FAIL;
-
-
-
- 	//if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Model_Player"),
-		//CModel::Create(m_pDevice, m_pDeviceContext, CModel::TYPE_NONANIM, "../Bin/Resources/Meshes/Player/", "Player4.fbx", PivotMatrix))))
-		//return E_FAIL;
-
-
-	////뱀파이어 베드
-	//if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Model_Player"),
-	//	CModel::Create(m_pDevice, m_pDeviceContext, CModel::TYPE_NONANIM, "../Bin/Resources/Meshes/VampireBed/", "vampireBed.fbx", PivotMatrix))))
+	//if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Model_ForkLift"),
+	//	CModel::Create(m_pDevice, m_pDeviceContext, CModel::TYPE_NONANIM, "../Bin/Resources/Meshes/Room/", "room4.fbx", PivotMatrix))))
 	//	return E_FAIL;
-
 
 	/* For. Prototype_Component_Model_Player */
-	PivotMatrix = XMMatrixScaling(0.05f, 0.05f, 0.05f) * XMMatrixRotationY(XMConvertToRadians(180.0f));
+	PivotMatrix = XMMatrixScaling(0.02f, 0.02f, 0.02f) * XMMatrixRotationY(XMConvertToRadians(180.0f));
 
-	//플레이어 메쉬 로드
-	if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Model_Player"),
-		CModel::Create(m_pDevice, m_pDeviceContext, CModel::TYPE_NONANIM, "../Bin/Resources/Meshes/Player/", "Player6.fbx", PivotMatrix))))
-		return E_FAIL;
-
-	///* For. Prototype_Component_VIBuffer_Cube */
-	//if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_VIBuffer_Cube"),
-	//	CVIBuffer_Cube::Create(m_pGraphic_Device))))
+	////플레이어 메쉬 로드 Player6
+	//if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Model_Player"),
+	//	CModel::Create(m_pDevice, m_pDeviceContext, CModel::TYPE_NONANIM, "../Bin/Resources/Meshes/Vampire/", "vampire2.fbx", PivotMatrix))))
 	//	return E_FAIL;
+
+
+
+
+ //	//if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Model_Player"),
+	//	//CModel::Create(m_pDevice, m_pDeviceContext, CModel::TYPE_NONANIM, "../Bin/Resources/Meshes/Player/", "Player4.fbx", PivotMatrix))))
+	//	//return E_FAIL;
+
+
+	//////뱀파이어 베드
+	////if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Model_Player"),
+	////	CModel::Create(m_pDevice, m_pDeviceContext, CModel::TYPE_NONANIM, "../Bin/Resources/Meshes/VampireBed/", "vampireBed.fbx", PivotMatrix))))
+	////	return E_FAIL;
+
 
 
 	

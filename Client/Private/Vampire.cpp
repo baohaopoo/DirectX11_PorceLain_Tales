@@ -72,13 +72,13 @@ HRESULT CVampire::Render()
 
 	for (_uint i = 0; i < iNumMeshContainers; ++i)
 	{
-		if (FAILED(m_pModelCom->Bind_Material_OnShader(m_pShaderCom, aiTextureType_DIFFUSE, "g_DiffuseTexture", i)))
-			return E_FAIL;
+		//if (FAILED(m_pModelCom->Bind_Material_OnShader(m_pShaderCom, aiTextureType_DIFFUSE, "g_DiffuseTexture", i)))
+		//	return E_FAIL;
 
 		if (FAILED(m_pShaderCom->Begin(2)))
 			return E_FAIL;
 
-		if (FAILED(m_pModelCom->Render(i)))
+		if (FAILED(m_pModelCom->Render(m_pShaderCom, "g_BoneMatrices", i, 2)))
 			return E_FAIL;
 	}	
 

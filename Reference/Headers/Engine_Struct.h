@@ -2,6 +2,7 @@
 
 namespace Engine
 {
+	//애니메이션, keyframe을 위한. 
 	typedef struct tagKeyFrame
 	{
 		XMFLOAT3			vScale;

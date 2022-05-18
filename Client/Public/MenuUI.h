@@ -12,6 +12,8 @@ END
 
 BEGIN(Client)
 
+
+//문열리고 드라큘라 나오는 UI
 class MenuUI final : public CGameObject
 {
 private:

@@ -22,6 +22,11 @@ public:
 	HRESULT Ready_Layer_ExitUI(const _tchar* pLayerTag);
 	HRESULT Ready_Layer_ExitBtnUI(const _tchar* pLayerTag);
 
+
+	//Logo의 맵.
+	HRESULT Ready_Layer_Background(const _tchar* pLayerTag);
+
+
 	//영상 넣기
 private:
 	HWND		m_hVideo;

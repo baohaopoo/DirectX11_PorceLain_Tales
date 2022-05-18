@@ -1,5 +1,7 @@
 #include "..\Public\Model.h"
 #include "MeshContainer.h"
+#include "HierarchyNode.h"
+#include "Animation.h"
 #include "Texture.h"
 #include "Shader.h"
 
@@ -15,6 +17,12 @@ CModel::CModel(const CModel & rhs)
 	, m_iNumMeshContainers(rhs.m_iNumMeshContainers)
 	, m_Materials(rhs.m_Materials)
 	, m_iNumMaterials(rhs.m_iNumMaterials)
+	, m_Animations(rhs.m_Animations)
+	, m_iNumAnimations(rhs.m_iNumAnimations)
+	, m_iCurrentAnimIndex(rhs.m_iCurrentAnimIndex)
+	, m_HierarchyNodes(rhs.m_HierarchyNodes)
+	, m_PivotMatrix(rhs.m_PivotMatrix)
+	, m_eType(rhs.m_eType)
 {
 	for (auto& pMeshContainer : m_MeshContainers)
 		Safe_AddRef(pMeshContainer);	
@@ -48,19 +56,28 @@ HRESULT CModel::NativeConstruct_Prototype(TYPE eType, const char * pModelFilePat
 	if (nullptr == m_pScene)
 		return E_FAIL;
 
-	/*m_pScene->mRootNode->mChildren[]*/
 
-	/*m_pScene->mNumAnimations;
-	m_pScene->mAnimations[i];*/
 
 	XMStoreFloat4x4(&m_PivotMatrix, PivotMatrix);
+
+	if (FAILED(Ready_HierarchyNodes(m_pScene->mRootNode)))
+		return E_FAIL;
 
 	if (FAILED(Ready_MeshContainers()))
 		return E_FAIL;
 
 	if (FAILED(Ready_Materials(pModelFilePath)))
 		return E_FAIL;
-	
+
+
+	sort(m_HierarchyNodes.begin(), m_HierarchyNodes.end(), [](HierarchyNode* pSour, HierarchyNode* pDest)->_bool
+	{
+		return pSour->Get_Depth() < pDest->Get_Depth();
+	});
+
+	if (FAILED(Ready_Animations()))
+		return E_FAIL;
+
 	return S_OK;
 }
 
@@ -69,13 +86,42 @@ HRESULT CModel::NativeConstruct(void * pArg)
 	return S_OK;
 }
 
-HRESULT CModel::Render(_uint iMeshContainerIndex)
+void CModel::Update(_double TimeDelta)
 {
-	if (iMeshContainerIndex >= m_iNumMeshContainers)
+	if (m_iCurrentAnimIndex >= m_iNumAnimations)
+		return;
+
+	//현재 애니메이션에서 사용되는 뼈들의 지역행렬을 m_TransformationMatrix를 갱신
+	m_Animations[m_iCurrentAnimIndex]->Update(TimeDelta);
+
+	//노드를 순회하면서(부모->자식) 갱신된 matrix랑 부모 행렬을 곱해서 저장한다.
+	for (auto& pHierarchyNode : m_HierarchyNodes)
+	{
+		pHierarchyNode->Update_CombinedTransformationMatrix();
+	}
+
+}
+
+HRESULT CModel::Render(class CShader* pShader, const char* pBoneMatricesName, _uint iMeshContainerIndex, _uint iPassIndex)
+{
+	if (m_iCurrentAnimIndex >= m_iNumAnimations)
 		return E_FAIL;
-	
+
+	if (TYPE_ANIM == m_eType)
+	{
+		_float4x4		BoneMatrices[512];
+
+		ZeroMemory(BoneMatrices, sizeof(_float4x4) * 512);
+
+		m_MeshContainers[iMeshContainerIndex]->Get_BoneMatrices(BoneMatrices, XMLoadFloat4x4(&m_PivotMatrix));
+
+		pShader->Set_RawValue(pBoneMatricesName, BoneMatrices, sizeof(_float4x4) * 512);
+	}
+
+	pShader->Begin(iPassIndex);
+
 	if (nullptr != m_MeshContainers[iMeshContainerIndex])
-		m_MeshContainers[iMeshContainerIndex]->Render();	
+		m_MeshContainers[iMeshContainerIndex]->Render();
 
 	return S_OK;
 }
@@ -85,6 +131,9 @@ HRESULT CModel::Bind_Material_OnShader(CShader * pShader, aiTextureType eType, c
 	_uint		iMaterialIndex = m_MeshContainers[iMeshContainerIndex]->Get_NumMaterialIndex();
 	if (iMaterialIndex >= m_iNumMaterials)
 		return E_FAIL;
+
+	if (nullptr == m_Materials[iMaterialIndex].pMaterials[eType])
+		return S_OK;
 
 	return m_Materials[iMaterialIndex].pMaterials[eType]->SetUp_ShaderResourceView(pShader, pConstantName, 0);	
 }
@@ -99,7 +148,7 @@ HRESULT CModel::Ready_MeshContainers()
 	for (_uint i = 0; i < m_pScene->mNumMeshes; ++i)
 	{
 		/* 정점정보를 읽어서 각각의 메시컨테이너 객체가 해당 정볼르 가지게끔 만드단ㄷ. */
-		CMeshContainer*		pMeshContainer = CMeshContainer::Create(m_pDevice, m_pDeviceContext, m_eType, m_pScene->mMeshes[i], m_PivotMatrix);
+		CMeshContainer*		pMeshContainer = CMeshContainer::Create(m_pDevice, m_pDeviceContext, m_eType, m_pScene->mMeshes[i], m_PivotMatrix, m_HierarchyNodes);
 		if (nullptr == pMeshContainer)
 			return E_FAIL;
 
@@ -123,14 +172,14 @@ HRESULT CModel::Ready_Materials(const char* pModelFilePath)
 			return E_FAIL;
 
 		MODELMATERIAL		Materials;
-		ZeroMemory(&Materials, sizeof(MODELMATERIAL));		
+		ZeroMemory(&Materials, sizeof(MODELMATERIAL));
 
 		for (_uint j = 0; j < AI_TEXTURE_TYPE_MAX; ++j)
 		{
 			char		szTextureFilePath[MAX_PATH] = "";
 
-			aiString	strPath;		
-			
+			aiString	strPath;
+
 			if (FAILED(pAIMaterial->GetTexture(aiTextureType(j), 0, &strPath)))
 				continue;
 
@@ -148,7 +197,7 @@ HRESULT CModel::Ready_Materials(const char* pModelFilePath)
 
 			Materials.pMaterials[j] = CTexture::Create(m_pDevice, m_pDeviceContext, szFullPath);
 			if (nullptr == Materials.pMaterials[j])
-				return E_FAIL;				
+				return E_FAIL;
 		}
 		m_Materials.push_back(Materials);
 	}
@@ -158,24 +207,44 @@ HRESULT CModel::Ready_Materials(const char* pModelFilePath)
 
 HRESULT CModel::Ready_Animations()
 {
-	//씬이 비어있으면 그냥 나가자
 	if (nullptr == m_pScene)
 		return E_FAIL;
 
-
-	//
 	m_iNumAnimations = m_pScene->mNumAnimations;
 
 	for (_uint i = 0; i < m_iNumAnimations; ++i)
 	{
-		aiAnimation* pAIAnimation = m_pScene->mAnimations[i];
-		CAnimation* pAnimation = CAnimation::Create(pAIAnimation);
+		aiAnimation*	pAIAnimation = m_pScene->mAnimations[i];
+
+		CAnimation*		pAnimation = CAnimation::Create(pAIAnimation, m_HierarchyNodes);
 		if (nullptr == pAnimation)
 			return E_FAIL;
 
 		m_Animations.push_back(pAnimation);
-
 	}
+
+	return S_OK;
+}
+
+HRESULT CModel::Ready_HierarchyNodes(aiNode * pNode, HierarchyNode * pParent, _uint iDepth)
+{
+	if (nullptr == m_pScene)
+		return E_FAIL;
+
+	_uint	iNumChildren = pNode->mNumChildren;
+
+	HierarchyNode*			pHierarchyNode = HierarchyNode::Create(pNode, pParent, iDepth);
+	if (nullptr == pHierarchyNode)
+		return E_FAIL;
+
+	for (_uint i = 0; i < iNumChildren; ++i)
+	{
+		if (FAILED(Ready_HierarchyNodes(pNode->mChildren[i], pHierarchyNode, iDepth + 1)))
+			return E_FAIL;
+	}
+
+	m_HierarchyNodes.push_back(pHierarchyNode);
+
 	return S_OK;
 }
 
@@ -217,7 +286,7 @@ void CModel::Free()
 		for (_uint i = 0; i < AI_TEXTURE_TYPE_MAX; ++i)
 		{
 			Safe_Release(pMaterial.pMaterials[i]);
-		}		
+		}
 	}
 	m_Materials.clear();
 

@@ -214,8 +214,8 @@ HRESULT CMainApp::Ready_Prototype_Texture()
 HRESULT CMainApp::Ready_Prototype_Texture_UI()
 {
 	/* For.Prototype_Component_Texture_Default */
-	if (FAILED(m_pGameInstance->Add_Prototype(LEVEL_LOGO, TEXT("Prototype_Component_Texture_Default"),
-		CTexture::Create(m_pDevice, m_pDeviceContext, TEXT("../Bin/Resources/Textures/UI/LogoUI/Start.dds"), 1))))
+	if (FAILED(m_pGameInstance->Add_Prototype(LEVEL_LOGO, TEXT("Prototype_Component_Texture_LogoUI"),
+		CTexture::Create(m_pDevice, m_pDeviceContext, TEXT("../Bin/Resources/Textures/UI/LogoUI/UI2.png"), 1))))
 		return E_FAIL;
 
 
@@ -226,11 +226,26 @@ HRESULT CMainApp::Ready_Prototype_Texture_UI()
 
 
 
+
 	/* ExitBtnUI */
 	if (FAILED(m_pGameInstance->Add_Prototype(LEVEL_LOGO, TEXT("Prototype_Component_Texture_ExitBtnUI"),
 		CTexture::Create(m_pDevice, m_pDeviceContext, TEXT("../Bin/Resources/Textures/UI/LogoUI/Exit.dds"), 1))))
 		return E_FAIL;
 
+	/* PressExitBtnUI */
+	if (FAILED(m_pGameInstance->Add_Prototype(LEVEL_LOGO, TEXT("Prototype_Component_Texture_PressExitBtnUI"),
+		CTexture::Create(m_pDevice, m_pDeviceContext, TEXT("../Bin/Resources/Textures/UI/LogoUI/PressExitBtn.dds"), 1))))
+		return E_FAIL;
+
+	/*PlayBtnUI */
+	if (FAILED(m_pGameInstance->Add_Prototype(LEVEL_LOGO, TEXT("Prototype_Component_Texture_PlayBtnUI"),
+		CTexture::Create(m_pDevice, m_pDeviceContext, TEXT("../Bin/Resources/Textures/UI/LogoUI/PlayBtn.dds"), 1))))
+		return E_FAIL;
+
+	/*PressPlayBtnUI */
+	if (FAILED(m_pGameInstance->Add_Prototype(LEVEL_LOGO, TEXT("Prototype_Component_Texture_PressPlayBtnUI"),
+		CTexture::Create(m_pDevice, m_pDeviceContext, TEXT("../Bin/Resources/Textures/UI/LogoUI/PressPlayBtn.dds"), 1))))
+		return E_FAIL;
 
 	/* ExitUI */
 	if (FAILED(m_pGameInstance->Add_Prototype(LEVEL_LOGO, TEXT("Prototype_Component_Texture_ExitUI"),

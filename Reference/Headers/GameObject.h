@@ -15,6 +15,8 @@ public:
 	class CComponent* Get_Component(const _tchar* pComponentTag) {
 		return Find_Component(pComponentTag);
 	}
+public:
+	void Delete_Component(const _tchar* pComponentTag);
 
 public:
 	virtual HRESULT NativeConstruct_Prototype();
@@ -37,6 +39,8 @@ protected:
 
 protected:
 	HRESULT SetUp_Components(const _tchar* pComponentTag, _uint iLevelIndex, const _tchar* pPrototypeTag, CComponent** ppOut, void* pArg = nullptr);
+	//°Ù ÄÄÆ÷³ÍÆ® ¸¸µé±Í..
+
 
 private:
 	CComponent* Find_Component(const _tchar* pComponentTag);

@@ -20,6 +20,9 @@ HRESULT CLevel_Logo::NativeConstruct()
 		return E_FAIL;
 	
 
+	if (FAILED(Ready_Layer_ExitBtnUI(TEXT("Layer_PlayBtn"))))
+		return E_FAIL;
+
 
 
 
@@ -43,6 +46,8 @@ void CLevel_Logo::Tick(_double TimeDelta)
 	if (PtInRect(&rc, pt)) {
 
 		//모양만 바꾸기
+
+
 
 		//우클릭을 아예 해버린다면, 
 		if (GetAsyncKeyState(VK_LBUTTON)) {
@@ -146,7 +151,25 @@ HRESULT CLevel_Logo::Ready_Layer_ExitUI(const _tchar * pLayerTag)
 
 HRESULT CLevel_Logo::Ready_Layer_ExitBtnUI(const _tchar * pLayerTag)
 {
-	return E_NOTIMPL;
+	//사실 여긴 PlayBtn임
+	CGameInstance* pGameInstance = GET_INSTANCE(CGameInstance);
+
+	if (FAILED(pGameInstance->Add_GameObjectToLayer(LEVEL_LOGO, pLayerTag, TEXT("Prototype_GameObject_ExitBtnUI"))))
+		return E_FAIL;
+
+	RELEASE_INSTANCE(CGameInstance);
+
+	return S_OK;
+}
+
+HRESULT CLevel_Logo::Ready_Layer_Background(const _tchar * pLayerTag)
+{
+	CGameInstance* pGameInstance = GET_INSTANCE(CGameInstance);
+	if (FAILED(pGameInstance->Add_GameObjectToLayer(LEVEL_LOGO, pLayerTag, TEXT("Prototype_GameObject_LogoMap"))))
+		return E_FAIL;
+
+	RELEASE_INSTANCE(CGameInstance);
+	return S_OK;
 }
 
 CLevel_Logo * CLevel_Logo::Create(ID3D11Device* pDeviceOut, ID3D11DeviceContext* pDeviceContextOut)
