@@ -5,18 +5,9 @@
 
 #include <d3d11.h>
 #include <DirectXMath.h>
-#include <DirectXCollision.h>
 
 #include <d3dcompiler.h>
 #include <d3dx11effect.h>
-
-#include <DirectXTK/Effects.h>
-#include <DirectXTK/PrimitiveBatch.h>
-#include <DirectXTK/VertexTypes.h>
-
-#include <DirectXTK/SpriteBatch.h>
-#include <DirectXTK/SpriteFont.h>
-
 #include <DirectXTK/DDSTextureLoader.h>
 #include <DirectXTK/WICTextureLoader.h>
 

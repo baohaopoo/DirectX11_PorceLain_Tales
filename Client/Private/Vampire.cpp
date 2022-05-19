@@ -1,5 +1,5 @@
 #include "stdafx.h"
-#include "..\Public\Vampire.h"
+#include"Vampire.h"
 #include "GameInstance.h"
 
 CVampire::CVampire(ID3D11Device* pDeviceOut, ID3D11DeviceContext* pDeviceContextOut)
@@ -25,10 +25,11 @@ HRESULT CVampire::NativeConstruct_Prototype()
 HRESULT CVampire::NativeConstruct(void * pArg)
 {
 	CTransform::TRANSFORMDESC		TransformDesc;
+
 	ZeroMemory(&TransformDesc, sizeof(CTransform::TRANSFORMDESC));
 
-	TransformDesc.SpeedPerSec = 5.0f;
-	TransformDesc.RotationPerSec = XMConvertToRadians(90.0f);
+	TransformDesc.SpeedPerSec = 1.0f;
+	TransformDesc.RotationPerSec = XMConvertToRadians(180.0f);
 	
 	if (FAILED(__super::NativeConstruct(pArg, &TransformDesc)))
 		return E_FAIL;
@@ -36,7 +37,7 @@ HRESULT CVampire::NativeConstruct(void * pArg)
 	if (FAILED(SetUp_Components()))
 		return E_FAIL;	
 
-
+	m_pModelCom->Set_AnimationIndex(0);
 
 	return S_OK;
 }
@@ -44,7 +45,52 @@ HRESULT CVampire::NativeConstruct(void * pArg)
 void CVampire::Tick(_double TimeDelta)
 {
 	__super::Tick(TimeDelta);
+	CGameInstance*		pGameInstance = CGameInstance::GetInstance();
+	/*if (pGameInstance->Get_DIKeyState(VK_UP) & 0x8000)
+	{
+		m_pTransformCom->Go_Straight(TimeDelta);
+	}
+	if (GetKeyState(VK_DOWN) & 0x8000)
+	{
+		m_pTransformCom->Go_BackWard(TimeDelta);
+	}
+	if (GetKeyState(VK_LEFT) & 0x8000)
+	{
+		m_pTransformCom->Go_Left(TimeDelta);
+	}
+	if (GetKeyState(VK_RIGHT) & 0x8000)
+	{
+		m_pTransformCom->Go_Right(TimeDelta);
+	}*/
 
+	cnt++;
+
+	if (cnt > 400) {
+
+		isLeft = true;
+		cnt = 0;
+	}
+
+
+	if (cnt > 200) {
+
+		isLeft = false;
+
+	}
+
+
+	if (!isLeft) {
+		m_pTransformCom->Rotation({ 0,1,0 }, -30);
+	}
+	else
+	{
+		m_pTransformCom->Rotation({ 0,1,0 }, 30);
+	}
+	m_pTransformCom->Go_Straight(TimeDelta);
+
+
+
+	m_pModelCom->Update(TimeDelta);
 }
 
 void CVampire::LateTick(_double TimeDelta)
@@ -72,13 +118,11 @@ HRESULT CVampire::Render()
 
 	for (_uint i = 0; i < iNumMeshContainers; ++i)
 	{
-		//if (FAILED(m_pModelCom->Bind_Material_OnShader(m_pShaderCom, aiTextureType_DIFFUSE, "g_DiffuseTexture", i)))
-		//	return E_FAIL;
-
-		if (FAILED(m_pShaderCom->Begin(2)))
+		if (FAILED(m_pModelCom->Bind_Material_OnShader(m_pShaderCom, aiTextureType_DIFFUSE, "g_DiffuseTexture", i)))
 			return E_FAIL;
 
-		if (FAILED(m_pModelCom->Render(m_pShaderCom, "g_BoneMatrices", i, 2)))
+
+		if (FAILED(m_pModelCom->Render(m_pShaderCom, "g_BoneMatrices", i, 0)))
 			return E_FAIL;
 	}	
 
@@ -92,13 +136,14 @@ HRESULT CVampire::SetUp_Components()
 		return E_FAIL;
 
 	/* For.Com_Shader */
-	if (FAILED(__super::SetUp_Components(TEXT("Com_Shader"), LEVEL_GAMEPLAY, TEXT("Prototype_Component_Shader_VtxNorTex"), (CComponent**)&m_pShaderCom)))
+	if (FAILED(__super::SetUp_Components(TEXT("Com_Shader"), LEVEL_GAMEPLAY, TEXT("Prototype_Component_Shader_VtxAnim"), (CComponent**)&m_pShaderCom)))
 		return E_FAIL;
 
 	/* For.Com_Model */
-	if (FAILED(__super::SetUp_Components(TEXT("Com_Model"), LEVEL_GAMEPLAY, TEXT("Prototype_Component_Model_ForkLift"), (CComponent**)&m_pModelCom)))
+	if (FAILED(__super::SetUp_Components(TEXT("Com_Model"), LEVEL_GAMEPLAY, TEXT("Prototype_Component_Model_Vampire"), (CComponent**)&m_pModelCom)))
 		return E_FAIL;
 	
+	//Prototype_Component_Model_Fiona
 	return S_OK;
 }
 
@@ -113,11 +158,11 @@ HRESULT CVampire::SetUp_ConstantTable()
 		return E_FAIL;
 	if (FAILED(m_pShaderCom->Set_RawValue("g_ProjMatrix", &pGameInstance->Get_TransformFloat4x4_TP(CPipeLine::D3DTS_PROJ), sizeof(_float4x4))))
 		return E_FAIL;	
-	if (FAILED(m_pShaderCom->Set_RawValue("g_vCamPosition", &pGameInstance->Get_CamPositionFloat4(), sizeof(_float4))))
-		return E_FAIL;
+	//if (FAILED(m_pShaderCom->Set_RawValue("g_vCamPosition", &pGameInstance->Get_CamPositionFloat4(), sizeof(_float4))))
+	//	return E_FAIL;
 
 	/* For.LightDesc */
-	const LIGHTDESC* pLightDesc = pGameInstance->Get_LightDesc(0);
+	/*const LIGHTDESC* pLightDesc = pGameInstance->Get_LightDesc(0);
 	if (nullptr == pLightDesc)
 		return E_FAIL;
 
@@ -133,35 +178,11 @@ HRESULT CVampire::SetUp_ConstantTable()
 		return E_FAIL;
 	if (FAILED(m_pShaderCom->Set_RawValue("g_vLightSpecular", &pLightDesc->vSpecular, sizeof(_float4))))
 		return E_FAIL;	
-
+*/
 	RELEASE_INSTANCE(CGameInstance);
 
+
 	return S_OK;
-}
-
-void CVampire::KeyInput(float fTimeDelta)
-{
-	CGameInstance*		pGameInstance = CGameInstance::GetInstance();
-
-
-	Safe_AddRef(pGameInstance);
-	if (pGameInstance->Get_DIKeyState(VK_UP) & 0x8000)
-	{
-		m_pTransformCom->Go_Straight(fTimeDelta);
-	}
-	if (GetKeyState(VK_DOWN) & 0x8000)
-	{
-		m_pTransformCom->Go_BackWard(fTimeDelta);
-	}
-	if (GetKeyState(VK_LEFT) & 0x8000)
-	{
-		m_pTransformCom->Go_Left(fTimeDelta);
-	}
-	if (GetKeyState(VK_RIGHT) & 0x8000)
-	{
-		m_pTransformCom->Go_Right(fTimeDelta);
-	}
-	Safe_Release(pGameInstance);
 }
 
 CVampire * CVampire::Create(ID3D11Device* pDeviceOut, ID3D11DeviceContext* pDeviceContextOut)
@@ -170,7 +191,7 @@ CVampire * CVampire::Create(ID3D11Device* pDeviceOut, ID3D11DeviceContext* pDevi
 
 	if (FAILED(pInstance->NativeConstruct_Prototype()))
 	{
-		MSG_BOX(TEXT("Failed to Created CFork"));
+		MSG_BOX(TEXT("Failed to Created CVampire"));
 		Safe_Release(pInstance);
 	}
 

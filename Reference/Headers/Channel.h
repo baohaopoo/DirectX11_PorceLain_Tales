@@ -11,7 +11,6 @@ class CChannel final :  public CBase
 {
 private:
 	CChannel();
-	CChannel(const CChannel& rhs);
 	virtual ~CChannel() = default;
 
 public:
@@ -25,8 +24,7 @@ public:
 	}
 
 public:
-	HRESULT NativeConstruct_Prototype(aiNodeAnim* pAIChannel);
-	HRESULT NativeConstruct();
+	HRESULT NativeConstruct(aiNodeAnim* pAIChannel);
 	void Compute_TransformationMatrix(_double PlayTime);
 
 private:
@@ -43,7 +41,6 @@ private:
 
 private:
 	_float4x4						m_TransformationMatrix;
-	_bool							m_isCloned = false;
 
 private:
 
@@ -51,7 +48,6 @@ private:
 
 public:
 	static CChannel* Create(aiNodeAnim* pAIChannel);
-	CChannel* Clone();
 	virtual void Free() override;
 };
 

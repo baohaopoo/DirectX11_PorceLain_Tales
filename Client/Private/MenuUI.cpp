@@ -68,7 +68,7 @@ void MenuUI::LateTick(_double TimeDelta)
     __super::LateTick(TimeDelta);
 
     if (nullptr != m_pRendererCom)
-        m_pRendererCom->Add_RenderGroup(CRenderer::GROUP_PRIORITY, this);
+        m_pRendererCom->Add_RenderGroup(CRenderer::GROUP_UI, this);
 }
 
 HRESULT MenuUI::Render()
@@ -97,7 +97,7 @@ HRESULT MenuUI::Render()
     if (FAILED(m_pTextureCom->SetUp_ShaderResourceView(m_pShaderCom, "g_Texture", 0)))
         return E_FAIL;
 
-    if (FAILED(m_pShaderCom->Begin(0)))
+    if (FAILED(m_pShaderCom->Begin(1)))
         return E_FAIL;
 
     if (FAILED(m_pVIBufferCom->Render()))

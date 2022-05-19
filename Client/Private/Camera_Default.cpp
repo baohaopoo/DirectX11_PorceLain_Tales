@@ -40,22 +40,22 @@ void CCamera_Default::Tick(_double TimeDelta)
 
 	Safe_AddRef(pGameInstance);
 
-	if (pGameInstance->Get_DIKeyState(DIK_W) & 0x8000)
-	{
-		m_pTransformCom->Go_Straight(TimeDelta);
-	}
-	if (GetKeyState('S') & 0x8000)
-	{
-		m_pTransformCom->Go_BackWard(TimeDelta);
-	}
-	if (GetKeyState('A') & 0x8000)
-	{
-		m_pTransformCom->Go_Left(TimeDelta);
-	}
-	if (GetKeyState('D') & 0x8000)
-	{
-		m_pTransformCom->Go_Right(TimeDelta);
-	}
+	//if (pGameInstance->Get_DIKeyState(DIK_W) & 0x8000)
+	//{
+	//	m_pTransformCom->Go_Straight(TimeDelta);
+	//}
+	//if (GetKeyState('S') & 0x8000)
+	//{
+	//	m_pTransformCom->Go_BackWard(TimeDelta);
+	//}
+	//if (GetKeyState('A') & 0x8000)
+	//{
+	//	m_pTransformCom->Go_Left(TimeDelta);
+	//}
+	//if (GetKeyState('D') & 0x8000)
+	//{
+	//	m_pTransformCom->Go_Right(TimeDelta);
+	//}
 
 	_long		MouseMove;
 

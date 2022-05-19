@@ -22,8 +22,8 @@ HRESULT CLevel_GamePlay::NativeConstruct()
 	if (FAILED(Ready_Layer_Camera(TEXT("Layer_Camera"))))
 		return E_FAIL;
 
-	/*if (FAILED(Ready_Layer_Player(TEXT("Layer_Player"))))
-		return E_FAIL;*/
+	if (FAILED(Ready_Layer_Player(TEXT("Layer_Player"))))
+		return E_FAIL;
 
 	if (FAILED(Ready_Layer_BackGround(TEXT("Layer_BackGround"))))
 		return E_FAIL;
@@ -34,8 +34,10 @@ HRESULT CLevel_GamePlay::NativeConstruct()
 	if (FAILED(Ready_Layer_UI(TEXT("Layer_UI"))))
 		return E_FAIL;
 
-	
+	if (FAILED(Ready_Layer_Vampire(TEXT("Layer_Vampire"))))
+		return E_FAIL;
 
+	
 	
 
 	return S_OK;
@@ -94,16 +96,9 @@ HRESULT CLevel_GamePlay::Ready_Layer_Camera(const _tchar * pLayerTag)
 	CCamera::CAMERADESC			CameraDesc;
 	ZeroMemory(&CameraDesc, sizeof(CCamera::CAMERADESC));
 
-	//여기서 카메라를 바꿔줘보자. 
-	//Player의 위치를 던져줬음 한다.
+	
 
-	//CComponent*		m_pTransform = (CTransform*)pGameInstance->Get_Compo
-	//m_pTransform->Set_State(CTransform::STATE_POSITION, { terrainpos.x, terrainpos.y, terrainpos.z });
 
-	//////플레이어..우쩌지..
-	//CTransform* TargetTransform = (CTransform*)pGameInstance->Get_Component
-/*
-	XMMATRIX* m_pTransform = (CTransform*)->Get_CamPosition();*/
 	CameraDesc.vEye = _float3(0.f, 10.f, -15.f);
 	CameraDesc.vAt = _float3(0.f, 0.f, 0.f);
 	CameraDesc.vAxisY = _float3(0.f, 1.f, 0.f);
@@ -111,6 +106,13 @@ HRESULT CLevel_GamePlay::Ready_Layer_Camera(const _tchar * pLayerTag)
 	CameraDesc.fFar = 300.0f;
 	CameraDesc.fFovy = XMConvertToRadians(60.0f);
 	CameraDesc.fAspect = (_float)g_iWinCX / g_iWinCY;
+	/*CameraDesc.vEye = _float3(0.f, 3.f, -15.f);
+	CameraDesc.vAt = _float3(0.f, 0.f, 0.f);
+	CameraDesc.vAxisY = _float3(0.f, 1.f, 0.f);
+	CameraDesc.fNear = 10.f;
+	CameraDesc.fFar = 100.0f;
+	CameraDesc.fFovy = XMConvertToRadians(60.0f);
+	CameraDesc.fAspect = (_float)g_iWinCX / g_iWinCY;*/
 
 	if (FAILED(pGameInstance->Add_GameObjectToLayer(LEVEL_GAMEPLAY, pLayerTag, TEXT("Prototype_GameObject_Camera_Default"), &CameraDesc)))
 		return E_FAIL;
@@ -125,9 +127,20 @@ HRESULT CLevel_GamePlay::Ready_Layer_Player(const _tchar * pLayerTag)
 	CGameInstance*		pGameInstance = CGameInstance::GetInstance();
 	Safe_AddRef(pGameInstance);
 
-	
-
 	if (FAILED(pGameInstance->Add_GameObjectToLayer(LEVEL_GAMEPLAY, pLayerTag, TEXT("Prototype_GameObject_Player"))))
+		return E_FAIL;
+
+	Safe_Release(pGameInstance);
+
+	return S_OK;
+}
+
+HRESULT CLevel_GamePlay::Ready_Layer_Vampire(const _tchar * pLayerTag)
+{
+	CGameInstance*		pGameInstance = CGameInstance::GetInstance();
+	Safe_AddRef(pGameInstance);
+
+	if (FAILED(pGameInstance->Add_GameObjectToLayer(LEVEL_GAMEPLAY, pLayerTag, TEXT("Prototype_GameObject_Vampire"))))
 		return E_FAIL;
 
 	Safe_Release(pGameInstance);
@@ -140,14 +153,12 @@ HRESULT CLevel_GamePlay::Ready_Layer_BackGround(const _tchar * pLayerTag)
 	CGameInstance*		pGameInstance = CGameInstance::GetInstance();
 	Safe_AddRef(pGameInstance);
 
-	//if (FAILED(pGameInstance->Add_GameObjectToLayer(LEVEL_GAMEPLAY, pLayerTag, TEXT("Prototype_GameObject_Terrain"))))
-	//	return E_FAIL;
+	if (FAILED(pGameInstance->Add_GameObjectToLayer(LEVEL_GAMEPLAY, pLayerTag, TEXT("Prototype_GameObject_Map"))))
+		return E_FAIL;
 
+	////플레이어
 	//if (FAILED(pGameInstance->Add_GameObjectToLayer(LEVEL_GAMEPLAY, pLayerTag, TEXT("Prototype_GameObject_ForkLift"))))
 	//	return E_FAIL;
-
-
-
 
 	Safe_Release(pGameInstance);
 
@@ -181,9 +192,11 @@ HRESULT CLevel_GamePlay::Ready_Layer_UI(const _tchar * pLayerTag)
 	if (FAILED(pGameInstance->Add_GameObjectToLayer(LEVEL_GAMEPLAY, pLayerTag, TEXT("Prototype_GameObject_EyeUI"))))
 		return E_FAIL;
 
-	if (FAILED(pGameInstance->Add_GameObjectToLayer(LEVEL_GAMEPLAY, pLayerTag, TEXT("Prototype_GameObject_HeartUI"))))
-		return E_FAIL;
-
+	//여기서 하트 UI 3개위치 다르게 만들어주장.
+	for (int i = 0; i < 3; ++i) {
+		if (FAILED(pGameInstance->Add_GameObjectToLayer(LEVEL_GAMEPLAY, pLayerTag, TEXT("Prototype_GameObject_HeartUI"))))
+			return E_FAIL;
+	}
 
 	Safe_Release(pGameInstance);
 

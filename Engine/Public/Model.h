@@ -62,10 +62,8 @@ private:
 
 private:
 	HRESULT Ready_MeshContainers();
-	HRESULT Clone_MeshContainers();
 	HRESULT Ready_Materials(const char* pModelFilePath);
 	HRESULT Ready_Animations();
-	HRESULT Clone_Animations();	
 	HRESULT Ready_HierarchyNodes(aiNode* pNode, CHierarchyNode* pParent = nullptr, _uint iDepth = 0);
 
 public:

@@ -51,12 +51,37 @@ void ExitBtn::Tick(_double TimeDelta)
 {
 	__super::Tick(TimeDelta);
 
-
+	//여기서 텍스처의 컴포넌트를 바꿔주려고 했었다.
+	changeTexture();
 	m_pTransformCom->Scaled(_float3(m_fSizeX, m_fSizeY, 1.f));
 	m_pTransformCom->Set_State(CTransform::STATE_POSITION, XMVectorSet(m_fX - g_iWinCX * 0.5f, -m_fY + g_iWinCY * 0.5f, 0.f, 1.f));
 
-	if (GetKeyState('Q') & 0x8000)
+	RECT rc{ 183,50,283,150 };
+	POINT pt;
+	GetCursorPos(&pt);
+	ScreenToClient(g_hWnd, &pt);
+
+	if (PtInRect(&rc, pt)) {
+
+		//모양만 바꾸기
 		isChange = true;
+		//여기서 크기 조절.
+		m_pTransformCom->Scaled(_float3(m_fSizeY + 30, m_fSizeY + 30, 1.f));
+
+
+		//우클릭을 아예 해버린다면, 
+		if (GetAsyncKeyState(VK_LBUTTON)) {
+			CGameInstance* pGameInstance = GET_INSTANCE(CGameInstance);
+
+
+
+
+			RELEASE_INSTANCE(CGameInstance);
+		}
+
+	}
+	else m_pTransformCom->Scaled(_float3(m_fSizeY , m_fSizeY , 1.f));
+
 
 }
 
@@ -103,6 +128,23 @@ HRESULT ExitBtn::Render()
 	return S_OK;
 }
 
+void ExitBtn::changeTexture()
+{
+	if (isChange)
+	{
+		/* For.Com_Texture */
+		if (FAILED(__super::SetUp_Components(TEXT("Com_Texture"), LEVEL_LOGO, TEXT("Prototype_Component_Texture_PressPlayBtnUI"), (CComponent**)&m_pTextureCom)))
+			return;
+		
+	}
+	else {
+		/* For.Com_Texture */
+		if (FAILED(__super::SetUp_Components(TEXT("Com_Texture"), LEVEL_LOGO, TEXT("Prototype_Component_Texture_PlayBtnUI"), (CComponent**)&m_pTextureCom)))
+			return;
+	}
+
+}
+
 HRESULT ExitBtn::SetUp_Components()
 {
 	/* For.Com_Renderer */
@@ -118,22 +160,7 @@ HRESULT ExitBtn::SetUp_Components()
 		return E_FAIL;
 
 
-
- 	if (isChange)
-	{
-		/* For.Com_Texture */
-		if (FAILED(__super::SetUp_Components(TEXT("Com_Texture"), LEVEL_LOGO, TEXT("Prototype_Component_Texture_PressPlayBtnUI"), (CComponent**)&m_pTextureCom)))
-			return E_FAIL;
-
-
-		isChange = false;
-	}
-	else {
-		/* For.Com_Texture */
-		if (FAILED(__super::SetUp_Components(TEXT("Com_Texture"), LEVEL_LOGO, TEXT("Prototype_Component_Texture_PlayBtnUI"), (CComponent**)&m_pTextureCom)))
-			return E_FAIL;
-	}
-
+ 
 
 
 

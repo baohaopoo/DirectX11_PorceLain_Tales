@@ -2,34 +2,16 @@
 #include "HierarchyNode.h"
 
 CChannel::CChannel()
-	: m_isCloned(false)
 {
 
 }
 
-CChannel::CChannel(const CChannel & rhs)
-	: m_KeyFrames(rhs.m_KeyFrames)
-	, m_iNumKeyFrames(rhs.m_iNumKeyFrames)
-	, m_iCurrentKeyFrame(rhs.m_iCurrentKeyFrame)
-	, m_TransformationMatrix(rhs.m_TransformationMatrix)
-	, m_isCloned(true)
-
-{
-	strcpy_s(m_szName, rhs.m_szName);
-}
-
-HRESULT CChannel::NativeConstruct_Prototype(aiNodeAnim * pAIChannel)
+HRESULT CChannel::NativeConstruct(aiNodeAnim* pAIChannel)
 {
 	strcpy_s(m_szName, pAIChannel->mNodeName.data);
 
 	if (FAILED(Ready_KeyFrames(pAIChannel)))
 		return E_FAIL;
-
-	return S_OK;
-}
-
-HRESULT CChannel::NativeConstruct()
-{
 
 	return S_OK;
 }
@@ -130,20 +112,7 @@ CChannel * CChannel::Create(aiNodeAnim* pAIChannel)
 {
 	CChannel*	pInstance = new CChannel();
 
-	if (FAILED(pInstance->NativeConstruct_Prototype(pAIChannel)))
-	{
-		MSG_BOX(TEXT("Failed to Created CChannel"));
-		Safe_Release(pInstance);
-	}
-
-	return pInstance;
-}
-
-CChannel * CChannel::Clone()
-{
-	CChannel*	pInstance = new CChannel(*this);
-
-	if (FAILED(pInstance->NativeConstruct()))
+	if (FAILED(pInstance->NativeConstruct(pAIChannel)))
 	{
 		MSG_BOX(TEXT("Failed to Created CChannel"));
 		Safe_Release(pInstance);
@@ -154,14 +123,6 @@ CChannel * CChannel::Clone()
 
 void CChannel::Free()
 {
-	if (false == m_isCloned)
-	{
-		for (auto pKeyFrame : m_KeyFrames)
-			Safe_Delete(pKeyFrame);	
-	}
-
-	Safe_Release(m_pHierarchyNode);
-}
-
-
-
+	for (auto pKeyFrame : m_KeyFrames)
+		Safe_Delete(pKeyFrame);
+ }

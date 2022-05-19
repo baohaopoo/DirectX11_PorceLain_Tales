@@ -97,6 +97,7 @@ technique11 DefaultTechnique
 	}
 
 
+	//UI¿ë
 	pass AlphaBlendRendering
 	{
 		SetRasterizerState(RS_Default);
@@ -109,7 +110,6 @@ technique11 DefaultTechnique
 		PixelShader = compile ps_5_0 PS_MAIN();
 
 	}
-
 }
 
 

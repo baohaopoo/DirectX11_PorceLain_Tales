@@ -40,26 +40,29 @@
     <Filter Include="02. GameObject\Terrain">
       <UniqueIdentifier>{43b1b72b-67fd-4855-b281-2a554f2cca19}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03.UI">
-      <UniqueIdentifier>{436e0261-dbdf-4cf4-a9c5-41a6cfc0f2f7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03.UI\LogoUI">
-      <UniqueIdentifier>{9653b80e-d790-4194-a084-9e06d60c5d79}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03.UI\LoadingUI">
-      <UniqueIdentifier>{2dd07e99-470b-4fee-b5b5-8495b3e348bc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="03.UI\PlayUI">
-      <UniqueIdentifier>{b2d310e1-ff04-47a5-a322-14edf00e7954}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="02. GameObject\Vampire">
+    <Filter Include="02. GameObject\Fork">
       <UniqueIdentifier>{fe403a0d-ad15-4c60-84c2-7367a1b4a2e2}</UniqueIdentifier>
     </Filter>
     <Filter Include="02. GameObject\Player">
-      <UniqueIdentifier>{46050c33-7e01-497e-b5d1-168ec0d0ed5a}</UniqueIdentifier>
+      <UniqueIdentifier>{1b7757a8-2364-40bf-a466-b32164ccfe91}</UniqueIdentifier>
     </Filter>
     <Filter Include="02. GameObject\Map">
-      <UniqueIdentifier>{33697307-8849-4b70-b018-f009996f0661}</UniqueIdentifier>
+      <UniqueIdentifier>{785f9cd7-528c-4142-a276-f223c77d4996}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.UI">
+      <UniqueIdentifier>{f224b831-8839-431e-93c2-29e4cf9159de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.UI\LoadingUI">
+      <UniqueIdentifier>{31331748-938a-4eb8-bde4-eb189628c481}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.UI\LogoUI">
+      <UniqueIdentifier>{52c4e569-7973-410c-b94e-b2624491198c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03.UI\PlayUI">
+      <UniqueIdentifier>{ab6e43a4-2904-4135-bc47-32d0e6d799bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. GameObject\Vampire">
+      <UniqueIdentifier>{dd1b2726-262a-4399-a479-d1011f211515}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -108,16 +111,25 @@
     <ClInclude Include="..\Bin\ShaderFiles\Shader_Defines.hpp">
       <Filter>97. ShaderFiles</Filter>
     </ClInclude>
+    <ClInclude Include="..\Public\Fork.h">
+      <Filter>02. GameObject\Fork</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Player.h">
+      <Filter>02. GameObject\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\Map.h">
+      <Filter>02. GameObject\Map</Filter>
+    </ClInclude>
     <ClInclude Include="..\Public\UI.h">
       <Filter>03.UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\ExitBtn.h">
+      <Filter>03.UI\LogoUI</Filter>
     </ClInclude>
     <ClInclude Include="..\Public\ExitUI.h">
       <Filter>03.UI\LogoUI</Filter>
     </ClInclude>
     <ClInclude Include="..\Public\MenuUI.h">
-      <Filter>03.UI\LogoUI</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Public\ExitBtn.h">
       <Filter>03.UI\LogoUI</Filter>
     </ClInclude>
     <ClInclude Include="..\Public\LoadingUI.h">
@@ -129,14 +141,11 @@
     <ClInclude Include="..\Public\HeartUI.h">
       <Filter>03.UI\PlayUI</Filter>
     </ClInclude>
+    <ClInclude Include="..\Public\StartBtn.h">
+      <Filter>03.UI\LogoUI</Filter>
+    </ClInclude>
     <ClInclude Include="..\Public\Vampire.h">
       <Filter>02. GameObject\Vampire</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Public\Player.h">
-      <Filter>02. GameObject\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Public\Map.h">
-      <Filter>02. GameObject\Map</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -170,8 +179,20 @@
     <ClCompile Include="..\Private\Terrain.cpp">
       <Filter>02. GameObject\Terrain</Filter>
     </ClCompile>
+    <ClCompile Include="..\Private\Fork.cpp">
+      <Filter>02. GameObject\Fork</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Player.cpp">
+      <Filter>02. GameObject\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\Map.cpp">
+      <Filter>02. GameObject\Map</Filter>
+    </ClCompile>
     <ClCompile Include="..\Private\UI.cpp">
       <Filter>03.UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\ExitBtn.cpp">
+      <Filter>03.UI\LogoUI</Filter>
     </ClCompile>
     <ClCompile Include="..\Private\ExitUI.cpp">
       <Filter>03.UI\LogoUI</Filter>
@@ -179,26 +200,20 @@
     <ClCompile Include="..\Private\MenuUI.cpp">
       <Filter>03.UI\LogoUI</Filter>
     </ClCompile>
-    <ClCompile Include="..\Private\ExitBtn.cpp">
-      <Filter>03.UI\LogoUI</Filter>
-    </ClCompile>
     <ClCompile Include="..\Private\LoadingUI.cpp">
       <Filter>03.UI\LoadingUI</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Private\EyeUI.cpp">
-      <Filter>03.UI\PlayUI</Filter>
     </ClCompile>
     <ClCompile Include="..\Private\HeartUI.cpp">
       <Filter>03.UI\PlayUI</Filter>
     </ClCompile>
+    <ClCompile Include="..\Private\EyeUI.cpp">
+      <Filter>03.UI\PlayUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\StartBtn.cpp">
+      <Filter>03.UI\LogoUI</Filter>
+    </ClCompile>
     <ClCompile Include="..\Private\Vampire.cpp">
       <Filter>02. GameObject\Vampire</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Private\Player.cpp">
-      <Filter>02. GameObject\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Private\Map.cpp">
-      <Filter>02. GameObject\Map</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -219,6 +234,9 @@
       <Filter>97. ShaderFiles</Filter>
     </FxCompile>
     <FxCompile Include="..\Bin\ShaderFiles\Shader_VtxNorTex.hlsl">
+      <Filter>97. ShaderFiles</Filter>
+    </FxCompile>
+    <FxCompile Include="..\Bin\ShaderFiles\Shader_VtxAnim.hlsl">
       <Filter>97. ShaderFiles</Filter>
     </FxCompile>
   </ItemGroup>

@@ -18,7 +18,6 @@ HRESULT CBackGround::NativeConstruct_Prototype()
 	if (FAILED(__super::NativeConstruct_Prototype()))
 		return E_FAIL;
 
-	//직교 투영 부분.
 	XMStoreFloat4x4(&m_ProjMatrix, XMMatrixOrthographicLH(g_iWinCX, g_iWinCY, 0.f, 1.f));
 	
 	return S_OK;
@@ -36,6 +35,8 @@ HRESULT CBackGround::NativeConstruct(void * pArg)
 	if (FAILED(SetUp_Components()))
 		return E_FAIL;
 
+
+
 	//m_fX = 231.f;
 	//m_fY = 284.f;
 
@@ -43,12 +44,12 @@ HRESULT CBackGround::NativeConstruct(void * pArg)
 	//m_fSizeY = 570;
 
 
+
 	m_fX = g_iWinCX * 0.5f;
 	m_fY = g_iWinCY * 0.5f;
 
 	m_fSizeX = g_iWinCX;
 	m_fSizeY = g_iWinCY;
-
 
 	return S_OK;
 }
@@ -97,12 +98,16 @@ HRESULT CBackGround::Render()
 	if (FAILED(m_pTextureCom->SetUp_ShaderResourceView(m_pShaderCom, "g_Texture", 0)))
 		return E_FAIL;
 
+
+
 	//pass를 꼭 바꿔주야해 UI라면..
 	if (FAILED(m_pShaderCom->Begin(1)))
 		return E_FAIL;
-	
+
 	if (FAILED(m_pVIBufferCom->Render()))
 		return E_FAIL;
+
+
 
 	return S_OK;
 }

@@ -36,6 +36,7 @@ public:
 	HRESULT Ready_Prototype_GameObject();
 	HRESULT Ready_Prototype_Component();	
 
+
 public:
 	//UI 게임 오브젝트 미리 로딩 
 	HRESULT Ready_Prototype_GameObject_UI();

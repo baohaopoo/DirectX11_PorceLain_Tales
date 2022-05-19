@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Client_Defines.h"
 #include "GameObject.h"
 
@@ -9,12 +10,13 @@ class CModel;
 END
 
 BEGIN(Client)
-class Player final : public CGameObject
+
+class CPlayer final : public CGameObject
 {
 private:
-	explicit Player(ID3D11Device* pDeviceOut, ID3D11DeviceContext* pDeviceContextOut);
-	explicit Player(const Player& rhs);
-	virtual ~Player() = default;
+	explicit CPlayer(ID3D11Device* pDeviceOut, ID3D11DeviceContext* pDeviceContextOut);
+	explicit CPlayer(const CPlayer& rhs);
+	virtual ~CPlayer() = default;
 
 public:
 	virtual HRESULT NativeConstruct_Prototype() override;
@@ -23,27 +25,27 @@ public:
 	virtual void LateTick(_double TimeDelta) override;
 	virtual HRESULT Render() override;
 
-private:
-	void KeyInput(float TimeDelta);
-
-
-private:
+private:	
 	CRenderer*			m_pRendererCom = nullptr;
-	CShader*			m_pShaderCom = nullptr;
+	CShader*			m_pShaderCom = nullptr;	
 	CModel*				m_pModelCom = nullptr;
 
 private:
-
 	ID3D11ShaderResourceView*		m_pMaskSRV = nullptr;
 
 private:
 	HRESULT SetUp_Components();
-	HRESULT SetUp_ConstantTable();
-	HRESULT Create_MaskTexture();
+	HRESULT SetUp_ConstantTable();	
+
+private:
+	void KeyInput(_float TimeDelta);
+
+	
 
 public:
-	static Player* Create(ID3D11Device* pDeviceOut, ID3D11DeviceContext* pDeviceContextOut);
+	static CPlayer* Create(ID3D11Device* pDeviceOut, ID3D11DeviceContext* pDeviceContextOut);
 	virtual CGameObject* Clone(void* pArg) override;
 	virtual void Free() override;
 };
+
 END

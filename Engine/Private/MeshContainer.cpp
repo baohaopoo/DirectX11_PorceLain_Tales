@@ -7,22 +7,10 @@ CMeshContainer::CMeshContainer(ID3D11Device * pDevice, ID3D11DeviceContext * pDe
 
 }
 
-CMeshContainer::CMeshContainer(const CMeshContainer & rhs)
-	: CVIBuffer(rhs)
-	, m_eType(rhs.m_eType)
-	, m_PivotMatrix(rhs.m_PivotMatrix)
-	, m_iMaterialIndex(rhs.m_iMaterialIndex)
-	, m_iNumBones(rhs.m_iNumBones)
-	, m_pAIMesh(rhs.m_pAIMesh)
-{
-
-}
-
 HRESULT CMeshContainer::NativeConstruct_Prototype(CModel::TYPE eType, aiMesh * pAIMesh, _float4x4 PivotMatrix, vector<CHierarchyNode*>	HierarchyNodes)
 {
 	m_eType = eType;
 	m_PivotMatrix = PivotMatrix;
-	m_pAIMesh = pAIMesh;
 
 #pragma region VERTEX_BUFFER
 	HRESULT			hr = 0;
@@ -65,58 +53,8 @@ HRESULT CMeshContainer::NativeConstruct_Prototype(CModel::TYPE eType, aiMesh * p
 	if (FAILED(Create_IndexBuffer()))
 		return E_FAIL;
 
-	Safe_Delete_Array(pIndices);
-
 #pragma endregion
 
-	return S_OK;
-}
-
-HRESULT CMeshContainer::NativeConstruct(void * pArg)
-{
-	vector<CHierarchyNode*>		HierarchyNodes = *(vector<CHierarchyNode*>*)pArg;
-
-	if (0 == m_iNumBones)
-	{
-		if (1 == HierarchyNodes.size())
-			return S_OK;
-
-		auto	iter = find_if(HierarchyNodes.begin(), HierarchyNodes.end(), [&](CHierarchyNode* pNode)
-		{
-			return !strcmp(m_pAIMesh->mName.data, pNode->Get_Name());
-		});
-
-		if (iter == HierarchyNodes.end())
-			return E_FAIL;
-
-		m_pHierarchyNode = *iter;
-
-		Safe_AddRef(*iter);
-
-		return S_OK;
-	}
-
-	for (_uint i = 0; i < m_iNumBones; ++i)
-	{
-		aiBone*		pAIBone = m_pAIMesh->mBones[i];
-
-		auto	iter = find_if(HierarchyNodes.begin(), HierarchyNodes.end(), [&](CHierarchyNode* pNode)
-		{
-			return !strcmp(pAIBone->mName.data, pNode->Get_Name());
-		});
-
-		if (iter == HierarchyNodes.end())
-			return E_FAIL;
-
-		_float4x4	OffsetMatrix;
-		memcpy(&OffsetMatrix, &pAIBone->mOffsetMatrix, sizeof(_float4x4));
-
-		(*iter)->Set_OffsetMatrix(XMMatrixTranspose(XMLoadFloat4x4(&OffsetMatrix)));
-
-		m_MeshContainerNodes.push_back((*iter));
-
-		Safe_AddRef(*iter);
-	}
 	return S_OK;
 }
 
@@ -154,8 +92,6 @@ HRESULT CMeshContainer::Create_VertexBuffer_NonAnim(aiMesh* pAIMesh)
 
 	if (FAILED(__super::Create_VertexBuffer()))
 		return E_FAIL;
-
-	Safe_Delete_Array(pVertices);
 	
 	return S_OK;
 }
@@ -194,8 +130,6 @@ HRESULT CMeshContainer::Create_VertexBuffer_Anim(aiMesh* pAIMesh, vector<CHierar
 
 	if (FAILED(__super::Create_VertexBuffer()))
 		return E_FAIL;
-
-	Safe_Delete_Array(pVertices);
 
 	return S_OK;
 }
@@ -319,10 +253,11 @@ void CMeshContainer::Free()
 {
 	__super::Free();
 
-	Safe_Release(m_pHierarchyNode);
-
 	for (auto& pHierarchyNode : m_MeshContainerNodes)	
 		Safe_Release(pHierarchyNode);
 
 	m_MeshContainerNodes.clear();
+	
+
+	Safe_Release(m_pHierarchyNode);
 }

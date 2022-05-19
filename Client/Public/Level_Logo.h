@@ -23,13 +23,11 @@ public:
 	HRESULT Ready_Layer_ExitBtnUI(const _tchar* pLayerTag);
 
 
-	//Logo의 맵.
-	HRESULT Ready_Layer_Background(const _tchar* pLayerTag);
-
 
 	//영상 넣기
 private:
 	HWND		m_hVideo;
+
 
 public:
 	static CLevel_Logo* Create(ID3D11Device* pDeviceOut, ID3D11DeviceContext* pDeviceContextOut);

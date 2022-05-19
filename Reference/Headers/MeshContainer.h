@@ -11,7 +11,6 @@ class CMeshContainer final : public CVIBuffer
 {
 private:
 	CMeshContainer(ID3D11Device* pDevice, ID3D11DeviceContext* pDeviceContext);
-	CMeshContainer(const CMeshContainer& rhs);
 	virtual ~CMeshContainer() = default;
 
 public:
@@ -21,7 +20,6 @@ public:
 
 public:
 	HRESULT NativeConstruct_Prototype(CModel::TYPE eType, aiMesh* pAIMesh, _float4x4 PivotMatrix, vector<CHierarchyNode*>	HierarchyNodes);
-	HRESULT NativeConstruct(void* pArg);
 
 public:
 	HRESULT Create_VertexBuffer_NonAnim(aiMesh* pAIMesh);
@@ -33,9 +31,6 @@ private:
 	CModel::TYPE				m_eType = CModel::TYPE_END;
 	_float4x4					m_PivotMatrix;
 	_uint						m_iMaterialIndex = 0;
-
-private:
-	aiMesh*								m_pAIMesh = nullptr;
 
 private:
 	_uint								m_iNumBones = 0;

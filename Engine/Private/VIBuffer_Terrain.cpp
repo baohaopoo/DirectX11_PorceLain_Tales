@@ -165,7 +165,6 @@ HRESULT CVIBuffer_Terrain::NativeConstruct_Prototype(const _tchar* pHeightMapPat
 		return E_FAIL;
 #pragma endregion
 
-	Safe_Delete_Array(pIndices);
 	Safe_Delete_Array(pVertices);
 
 	return S_OK;

@@ -18,11 +18,11 @@ HRESULT CLevel_Logo::NativeConstruct()
 
 	if (FAILED(Ready_Layer_BackGround(TEXT("Layer_BackGround"))))
 		return E_FAIL;
-	
+
+
 
 	if (FAILED(Ready_Layer_ExitBtnUI(TEXT("Layer_PlayBtn"))))
 		return E_FAIL;
-
 
 
 
@@ -38,7 +38,7 @@ void CLevel_Logo::Tick(_double TimeDelta)
 	Safe_AddRef(pGameInstance);
 
 	//ExitBtn 누르면, 모양달라지고, 몇초후 fade in.out인 된다.
-	RECT rc{ 100,0,200,300 };
+	RECT rc{ 183,50,283,150 };
 	POINT pt;
 	GetCursorPos(&pt);
 	ScreenToClient(g_hWnd, &pt);
@@ -62,7 +62,7 @@ void CLevel_Logo::Tick(_double TimeDelta)
 	}
 
 
-	RECT Exitpos{ 100,350,200,650 };
+	RECT Exitpos{ 183,170,283,270 };
 	POINT pt2;
 	GetCursorPos(&pt2);
 	ScreenToClient(g_hWnd, &pt2);
@@ -84,12 +84,6 @@ void CLevel_Logo::Tick(_double TimeDelta)
 	}
 
 
-	//F1키를 누르면 다음 장면으로 넘어간다.
-	if (GetKeyState(VK_F1) & 0x8000)
-	{
-		if (FAILED(Ready_Layer_MenuUI(TEXT("Layer_MenuUI"))))
-			return;
-	}
 	// 기존에 누르던 키를 누르고 있으
 	if (GetKeyState(VK_SPACE) & 0x8000)
 	{
@@ -101,6 +95,7 @@ void CLevel_Logo::Tick(_double TimeDelta)
 
 	Safe_Release(pGameInstance);
 
+		
 }
 
 HRESULT CLevel_Logo::Render()
@@ -115,7 +110,7 @@ HRESULT CLevel_Logo::Render()
 
 HRESULT CLevel_Logo::Ready_Layer_BackGround(const _tchar * pLayerTag)
 {
-	CGameInstance*		pGameInstance = GET_INSTANCE(CGameInstance);
+	CGameInstance*		pGameInstance = GET_INSTANCE(CGameInstance);	
 
 	if (FAILED(pGameInstance->Add_GameObjectToLayer(LEVEL_LOGO, pLayerTag, TEXT("Prototype_GameObject_BackGround"))))
 		return E_FAIL;
@@ -157,18 +152,12 @@ HRESULT CLevel_Logo::Ready_Layer_ExitBtnUI(const _tchar * pLayerTag)
 	if (FAILED(pGameInstance->Add_GameObjectToLayer(LEVEL_LOGO, pLayerTag, TEXT("Prototype_GameObject_ExitBtnUI"))))
 		return E_FAIL;
 
-	RELEASE_INSTANCE(CGameInstance);
-
-	return S_OK;
-}
-
-HRESULT CLevel_Logo::Ready_Layer_Background(const _tchar * pLayerTag)
-{
-	CGameInstance* pGameInstance = GET_INSTANCE(CGameInstance);
-	if (FAILED(pGameInstance->Add_GameObjectToLayer(LEVEL_LOGO, pLayerTag, TEXT("Prototype_GameObject_LogoMap"))))
+	if (FAILED(pGameInstance->Add_GameObjectToLayer(LEVEL_LOGO, pLayerTag, TEXT("Prototype_GameObject_StartBtnUI"))))
 		return E_FAIL;
 
+
 	RELEASE_INSTANCE(CGameInstance);
+
 	return S_OK;
 }
 

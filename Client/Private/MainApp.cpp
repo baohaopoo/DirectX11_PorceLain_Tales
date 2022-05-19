@@ -5,6 +5,7 @@
 #include "Level_Logo.h"
 #include "Level_Loading.h"
 
+
 //UI용 헤더
 #include "UI.h"
 #include "MenuUI.h"
@@ -13,7 +14,7 @@
 #include "LoadingUI.h"
 #include "EyeUI.h"
 #include "HeartUI.h"
-
+#include "StartBtn.h"
 CMainApp::CMainApp()
 	: m_pGameInstance(CGameInstance::GetInstance())
 {
@@ -62,6 +63,7 @@ HRESULT CMainApp::NativeConstruct()
 	//텍스쳐용
 	if (FAILED(Ready_Prototype_Texture()))
 		return E_FAIL;
+
 
 	if (FAILED(Open_Level(LEVEL_LOGO)))
 		return E_FAIL;
@@ -126,14 +128,12 @@ HRESULT CMainApp::Ready_Prototype_GameObject()
 		CBackGround::Create(m_pDevice, m_pDeviceContext))))
 		return E_FAIL;
 
+
 	if (FAILED(Ready_Prototype_GameObject_UI())) {
 		MSG_BOX(TEXT("Failed to Ready Prototype_GameObject_UI"));
 		return E_FAIL;
 	}
 
-	///* For.Prototype_GameObject_Monster */
-	//if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_Monster"), CMonster::Create(m_pGraphic_Device))))
-	//	return E_FAIL;
 
 	return S_OK;
 }
@@ -155,15 +155,6 @@ HRESULT CMainApp::Ready_Prototype_Component()
 	if (FAILED(m_pGameInstance->Add_Prototype(LEVEL_STATIC, TEXT("Prototype_Component_VIBuffer_Rect"), CVIBuffer_Rect::Create(m_pDevice, m_pDeviceContext))))
 		return E_FAIL;
 
-	///* For.Prototype_Component_Texture_Default */
-	//if (FAILED(m_pGameInstance->Add_Prototype(LEVEL_STATIC, TEXT("Prototype_Component_Texture_Default"), 
-	//	CTexture::Create(m_pDevice, m_pDeviceContext, TEXT("../Bin/Resources/Textures/Default%d.dds"), 2))))
-	//	return E_FAIL;
-
-
-	///* For.Prototype_Component_Shader */
-	//if (FAILED(m_pGameInstance->Add_Prototype(LEVEL_STATIC, TEXT("Prototype_Component_Shader"), CShader::Create(m_pGraphic_Device, TEXT("../Bin/ShaderFiles/Shader_Rect.hlsl")))))
-	//	return E_FAIL;
 
 
 	return S_OK;
@@ -185,6 +176,10 @@ HRESULT CMainApp::Ready_Prototype_GameObject_UI()
 	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_ExitUI"), ExitUI::Create(m_pDevice, m_pDeviceContext))))
 		return E_FAIL;
 
+	//진짜 ExitBtn
+	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_StartBtnUI"), StartBtn::Create(m_pDevice, m_pDeviceContext))))
+		return E_FAIL;
+
 
 	if (FAILED(m_pGameInstance->Add_Prototype(TEXT("Prototype_GameObject_LoadingUI"), LoadingUI::Create(m_pDevice, m_pDeviceContext))))
 		return E_FAIL;
@@ -200,7 +195,6 @@ HRESULT CMainApp::Ready_Prototype_GameObject_UI()
 
 HRESULT CMainApp::Ready_Prototype_Texture()
 {
-
 	// UI용 텍스쳐 올리기.
 	if (FAILED(Ready_Prototype_Texture_UI())) {
 		MSG_BOX(TEXT("Failed to Load Texture UI"));
@@ -215,7 +209,7 @@ HRESULT CMainApp::Ready_Prototype_Texture_UI()
 {
 	/* For.Prototype_Component_Texture_Default  UI2*/
 	if (FAILED(m_pGameInstance->Add_Prototype(LEVEL_LOGO, TEXT("Prototype_Component_Texture_LogoUI"),
-		CTexture::Create(m_pDevice, m_pDeviceContext, TEXT("../Bin/Resources/Textures/UI/LogoUI/Start.png"), 1))))
+		CTexture::Create(m_pDevice, m_pDeviceContext, TEXT("../Bin/Resources/Textures/UI/LogoUI/Start.dds"), 1))))
 		return E_FAIL;
 
 
@@ -229,7 +223,7 @@ HRESULT CMainApp::Ready_Prototype_Texture_UI()
 
 	/* ExitBtnUI */
 	if (FAILED(m_pGameInstance->Add_Prototype(LEVEL_LOGO, TEXT("Prototype_Component_Texture_ExitBtnUI"),
-		CTexture::Create(m_pDevice, m_pDeviceContext, TEXT("../Bin/Resources/Textures/UI/LogoUI/Exit.dds"), 1))))
+		CTexture::Create(m_pDevice, m_pDeviceContext, TEXT("../Bin/Resources/Textures/UI/LogoUI/ExitBtn.dds"), 1))))
 		return E_FAIL;
 
 	/* PressExitBtnUI */

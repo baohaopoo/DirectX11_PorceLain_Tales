@@ -35,14 +35,11 @@ private:
 
 private:
 	HRESULT SetUp_Components();
-	HRESULT SetUp_ConstantTable();
-	HRESULT Create_MaskTexture();
+	HRESULT SetUp_ConstantTable();	
 	
 private:
-	//키 입력관련.
-
-	void KeyInput(float fTimeDelta);
-
+	bool isLeft = false;
+	int  cnt = 0;
 public:
 	static CVampire* Create(ID3D11Device* pDeviceOut, ID3D11DeviceContext* pDeviceContextOut);
 	virtual CGameObject* Clone(void* pArg) override;
