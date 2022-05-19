@@ -6,6 +6,7 @@
 BEGIN(Engine)
 class CShader;
 class CRenderer;
+class CCollider;
 class CModel;
 END
 
@@ -26,6 +27,8 @@ public:
 	virtual HRESULT Render() override;
 
 private:	
+	CCollider* m_pAABBCom = nullptr;
+	CCollider* m_pOBBCom = nullptr;
 	CRenderer*			m_pRendererCom = nullptr;
 	CShader*			m_pShaderCom = nullptr;	
 	CModel*				m_pModelCom = nullptr;

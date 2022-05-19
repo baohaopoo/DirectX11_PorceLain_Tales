@@ -45,7 +45,7 @@ HRESULT CVampire::NativeConstruct(void * pArg)
 void CVampire::Tick(_double TimeDelta)
 {
 	__super::Tick(TimeDelta);
-	CGameInstance*		pGameInstance = CGameInstance::GetInstance();
+	//CGameInstance*		pGameInstance = CGameInstance::GetInstance();
 	/*if (pGameInstance->Get_DIKeyState(VK_UP) & 0x8000)
 	{
 		m_pTransformCom->Go_Straight(TimeDelta);
@@ -91,11 +91,33 @@ void CVampire::Tick(_double TimeDelta)
 
 
 	m_pModelCom->Update(TimeDelta);
+
+	//m_pAABBCom->Update(m_pTransformCom->Get_WorldMatrix());
+	//m_pOBBCom->Update(m_pTransformCom->Get_WorldMatrix());
 }
 
 void CVampire::LateTick(_double TimeDelta)
 {
 	__super::LateTick(TimeDelta);
+
+	//CGameInstance*		pGameInstance = GET_INSTANCE(CGameInstance);
+	//CCollider* pTargetAABB = (CCollider*)pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_Player"), TEXT("Com_AABB"));
+	//if (nullptr == pTargetAABB)
+	//	return;
+
+	//CCollider* pTargetOBB = (CCollider*)pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("LayerPlayer"), TEXT("Com_OBB"));
+	//if (nullptr == pTargetOBB)
+	//	return;
+
+
+	//CCollider*		pTargetSphere = (CCollider*)pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_Player"), TEXT("Com_SPHERE"));
+	//if (nullptr == pTargetSphere)
+	//	return;
+
+	////m_pAABBCom->Collsion_AABB(pTargetAABB);
+
+	////m_pOBBCom->Collsion_OBB(pTargetOBB);
+
 
 	if (nullptr != m_pRendererCom)
 		m_pRendererCom->Add_RenderGroup(CRenderer::GROUP_NONBLEND, this);

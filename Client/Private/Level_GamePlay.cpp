@@ -18,12 +18,12 @@ HRESULT CLevel_GamePlay::NativeConstruct()
 
 	if (FAILED(Ready_Lights()))
 		return E_FAIL;
+	if (FAILED(Ready_Layer_Player(TEXT("Layer_Player"))))
+		return E_FAIL;
 
 	if (FAILED(Ready_Layer_Camera(TEXT("Layer_Camera"))))
 		return E_FAIL;
 
-	if (FAILED(Ready_Layer_Player(TEXT("Layer_Player"))))
-		return E_FAIL;
 
 	if (FAILED(Ready_Layer_BackGround(TEXT("Layer_BackGround"))))
 		return E_FAIL;
@@ -97,10 +97,16 @@ HRESULT CLevel_GamePlay::Ready_Layer_Camera(const _tchar * pLayerTag)
 	ZeroMemory(&CameraDesc, sizeof(CCamera::CAMERADESC));
 
 	
+	CTransform* pPlayerTransform = (CTransform*)pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_Player"), TEXT("Com_Transform"));
+	_vector player = pPlayerTransform->Get_State(CTransform::STATE_POSITION);
 
+	_float3 playerpos;
+	XMStoreFloat3(&playerpos, player);
+	////x,y,z 가져오는 방식이.. 뭐야 
+	//XMStoreFloat3(&playerpos, player)
 
-	CameraDesc.vEye = _float3(0.f, 10.f, -15.f);
-	CameraDesc.vAt = _float3(0.f, 0.f, 0.f);
+	CameraDesc.vEye = _float3(playerpos.x, playerpos.y+0.7f, playerpos.z-1);
+	CameraDesc.vAt = _float3(playerpos.x, 0.f, playerpos.z);
 	CameraDesc.vAxisY = _float3(0.f, 1.f, 0.f);
 	CameraDesc.fNear = 0.1f;
 	CameraDesc.fFar = 300.0f;

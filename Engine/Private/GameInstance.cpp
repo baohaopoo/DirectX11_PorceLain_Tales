@@ -154,6 +154,14 @@ HRESULT CGameInstance::Open_Level(_uint iLevelIndex, CLevel * pLevel)
 	return m_pLevel_Manager->OpenLevel(iLevelIndex, pLevel);
 }
 
+CComponent * CGameInstance::Get_Component(_uint iLevelIndex, const _tchar * pLayerTag, const _tchar * pComponentTag, _uint iIndex)
+{
+	if (nullptr == m_pObject_Manager)
+		return nullptr;
+
+	return m_pObject_Manager->Get_Component(iLevelIndex, pLayerTag, pComponentTag, iIndex);
+}
+
 HRESULT CGameInstance::Add_Prototype(const _tchar * pPrototypeTag, CGameObject * pPrototype)
 {
 	if (nullptr == m_pObject_Manager)
