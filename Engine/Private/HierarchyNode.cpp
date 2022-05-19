@@ -1,18 +1,17 @@
 #include "..\Public\HierarchyNode.h"
 
-
-
-HierarchyNode::HierarchyNode()
+CHierarchyNode::CHierarchyNode()
 {
 }
 
-HRESULT HierarchyNode::NativeConstruct(aiNode * pAINode, HierarchyNode * pParent, _uint iDepth)
+HRESULT CHierarchyNode::NativeConstruct(aiNode * pAINode, CHierarchyNode* pParent, _uint iDepth)
 {
 	strcpy_s(m_szName, pAINode->mName.data);
 
 	m_pParent = pParent;
 
-	memcpy(&m_TransformationMatrix, &pAINode->mTransformation, sizeof(_float4x4));
+	memcpy(&m_TransformationMatrix, &pAINode->mTransformation, sizeof(_float4x4));	
+
 	XMStoreFloat4x4(&m_TransformationMatrix, XMMatrixTranspose(XMLoadFloat4x4(&m_TransformationMatrix)));
 
 	m_iDepth = iDepth;
@@ -20,30 +19,29 @@ HRESULT HierarchyNode::NativeConstruct(aiNode * pAINode, HierarchyNode * pParent
 	return S_OK;
 }
 
-void HierarchyNode::Update_CombinedTransformationMatrix()
+void CHierarchyNode::Update_CombinedTransformationMatrix()
 {
 	if (nullptr != m_pParent)
 		XMStoreFloat4x4(&m_CombinedTransformationMatrix, XMLoadFloat4x4(&m_TransformationMatrix) * XMLoadFloat4x4(&m_pParent->m_CombinedTransformationMatrix));
+
 	else
 		XMStoreFloat4x4(&m_CombinedTransformationMatrix, XMLoadFloat4x4(&m_TransformationMatrix));
 }
 
-HierarchyNode * HierarchyNode::Create(aiNode * pAINode, HierarchyNode* pParent, _uint iDepth)
+CHierarchyNode * CHierarchyNode::Create(aiNode * pAINode, CHierarchyNode* pParent, _uint iDepth)
 {
-	HierarchyNode*	pInstance = new HierarchyNode();
-
+	CHierarchyNode*	pInstance = new CHierarchyNode();
 
 	if (FAILED(pInstance->NativeConstruct(pAINode, pParent, iDepth)))
 	{
-		MSG_BOX(TEXT("Failed to Created HierarchyNode"));
+		MSG_BOX(TEXT("Failed to Created CHierarchyNode"));
 		Safe_Release(pInstance);
 	}
 
 	return pInstance;
 }
 
-void HierarchyNode::Free()
+void CHierarchyNode::Free()
 {
+
 }
-
-

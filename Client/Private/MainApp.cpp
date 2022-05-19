@@ -213,9 +213,9 @@ HRESULT CMainApp::Ready_Prototype_Texture()
 
 HRESULT CMainApp::Ready_Prototype_Texture_UI()
 {
-	/* For.Prototype_Component_Texture_Default */
+	/* For.Prototype_Component_Texture_Default  UI2*/
 	if (FAILED(m_pGameInstance->Add_Prototype(LEVEL_LOGO, TEXT("Prototype_Component_Texture_LogoUI"),
-		CTexture::Create(m_pDevice, m_pDeviceContext, TEXT("../Bin/Resources/Textures/UI/LogoUI/UI2.png"), 1))))
+		CTexture::Create(m_pDevice, m_pDeviceContext, TEXT("../Bin/Resources/Textures/UI/LogoUI/Start.png"), 1))))
 		return E_FAIL;
 
 

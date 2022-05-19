@@ -3,6 +3,7 @@
 #include "Model.h"
 #include "Shader.h"
 #include "Texture.h"
+#include "Collider.h"
 #include "Renderer.h"
 #include "Transform.h"
 #include "VIBuffer_Rect.h"

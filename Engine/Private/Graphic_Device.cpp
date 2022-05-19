@@ -214,4 +214,6 @@ void CGraphic_Device::Free()
 
 
 	Safe_Release(m_pDevice);
+
+	
 }

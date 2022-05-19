@@ -42,8 +42,6 @@ protected:
 	HRESULT Create_VertexBuffer();
 	HRESULT Create_IndexBuffer();
 
-
-
 public:
 	virtual CComponent* Clone(void* pArg) = 0;
 	virtual void Free() override;

@@ -13,14 +13,14 @@ CModel::CModel(ID3D11Device * pDevice, ID3D11DeviceContext * pDeviceContext)
 
 CModel::CModel(const CModel & rhs)
 	: CComponent(rhs)
+	, m_pScene(rhs.m_pScene)
 	, m_MeshContainers(rhs.m_MeshContainers)
 	, m_iNumMeshContainers(rhs.m_iNumMeshContainers)
 	, m_Materials(rhs.m_Materials)
 	, m_iNumMaterials(rhs.m_iNumMaterials)
 	, m_Animations(rhs.m_Animations)
 	, m_iNumAnimations(rhs.m_iNumAnimations)
-	, m_iCurrentAnimIndex(rhs.m_iCurrentAnimIndex)
-	, m_HierarchyNodes(rhs.m_HierarchyNodes)
+	, m_iCurrentAnimIndex(rhs.m_iCurrentAnimIndex)	
 	, m_PivotMatrix(rhs.m_PivotMatrix)
 	, m_eType(rhs.m_eType)
 {
@@ -34,6 +34,9 @@ CModel::CModel(const CModel & rhs)
 			Safe_AddRef(pMaterial.pMaterials[i]);
 		}
 	}
+
+	for (auto& pAnimation : m_Animations)
+		Safe_AddRef(pAnimation);
 }
 
 HRESULT CModel::NativeConstruct_Prototype(TYPE eType, const char * pModelFilePath, const char * pModelFileName, _fmatrix PivotMatrix)
@@ -56,12 +59,15 @@ HRESULT CModel::NativeConstruct_Prototype(TYPE eType, const char * pModelFilePat
 	if (nullptr == m_pScene)
 		return E_FAIL;
 
-
-
 	XMStoreFloat4x4(&m_PivotMatrix, PivotMatrix);
 
 	if (FAILED(Ready_HierarchyNodes(m_pScene->mRootNode)))
 		return E_FAIL;
+
+	sort(m_HierarchyNodes.begin(), m_HierarchyNodes.end(), [](CHierarchyNode* pSour, CHierarchyNode* pDest)->_bool
+	{
+		return pSour->Get_Depth() < pDest->Get_Depth();
+	});
 
 	if (FAILED(Ready_MeshContainers()))
 		return E_FAIL;
@@ -69,20 +75,28 @@ HRESULT CModel::NativeConstruct_Prototype(TYPE eType, const char * pModelFilePat
 	if (FAILED(Ready_Materials(pModelFilePath)))
 		return E_FAIL;
 
-
-	sort(m_HierarchyNodes.begin(), m_HierarchyNodes.end(), [](HierarchyNode* pSour, HierarchyNode* pDest)->_bool
-	{
-		return pSour->Get_Depth() < pDest->Get_Depth();
-	});
-
 	if (FAILED(Ready_Animations()))
 		return E_FAIL;
-
+	
 	return S_OK;
 }
 
 HRESULT CModel::NativeConstruct(void * pArg)
 {
+	if (FAILED(Ready_HierarchyNodes(m_pScene->mRootNode)))
+		return E_FAIL;
+
+	sort(m_HierarchyNodes.begin(), m_HierarchyNodes.end(), [](CHierarchyNode* pSour, CHierarchyNode* pDest)->_bool
+	{
+		return pSour->Get_Depth() < pDest->Get_Depth();
+	});
+
+	if (FAILED(Clone_MeshContainers()))
+		return E_FAIL;
+
+	if (FAILED(Clone_Animations()))
+		return E_FAIL;
+
 	return S_OK;
 }
 
@@ -91,37 +105,36 @@ void CModel::Update(_double TimeDelta)
 	if (m_iCurrentAnimIndex >= m_iNumAnimations)
 		return;
 
-	//현재 애니메이션에서 사용되는 뼈들의 지역행렬을 m_TransformationMatrix를 갱신
+	/* 현재 애님에서 사용되는 뼈들의 지역행렬(m_TransformationMatrix)을 갱신했다. */
 	m_Animations[m_iCurrentAnimIndex]->Update(TimeDelta);
 
-	//노드를 순회하면서(부모->자식) 갱신된 matrix랑 부모 행렬을 곱해서 저장한다.
+	/* 노드들을 순회하면서(부모에서부터 자식으로) 갱신된 m_TransformationMatrix랑 부모행렬을 곱하여 저장한다. */
 	for (auto& pHierarchyNode : m_HierarchyNodes)
 	{
 		pHierarchyNode->Update_CombinedTransformationMatrix();
 	}
-
 }
 
-HRESULT CModel::Render(class CShader* pShader, const char* pBoneMatricesName, _uint iMeshContainerIndex, _uint iPassIndex)
+HRESULT CModel::Render(CShader* pShader, const char* pBoneMatricesName, _uint iMeshContainerIndex, _uint iPassIndex)
 {
-	if (m_iCurrentAnimIndex >= m_iNumAnimations)
+	if (iMeshContainerIndex >= m_iNumMeshContainers)
 		return E_FAIL;
 
 	if (TYPE_ANIM == m_eType)
-	{
-		_float4x4		BoneMatrices[512];
+	{	
+		_float4x4		BoneMatrices[128];
 
-		ZeroMemory(BoneMatrices, sizeof(_float4x4) * 512);
+		ZeroMemory(BoneMatrices, sizeof(_float4x4) * 128);
 
 		m_MeshContainers[iMeshContainerIndex]->Get_BoneMatrices(BoneMatrices, XMLoadFloat4x4(&m_PivotMatrix));
 
-		pShader->Set_RawValue(pBoneMatricesName, BoneMatrices, sizeof(_float4x4) * 512);
+		pShader->Set_RawValue(pBoneMatricesName, BoneMatrices, sizeof(_float4x4) * 128);
 	}
 
 	pShader->Begin(iPassIndex);
-
+	
 	if (nullptr != m_MeshContainers[iMeshContainerIndex])
-		m_MeshContainers[iMeshContainerIndex]->Render();
+		m_MeshContainers[iMeshContainerIndex]->Render();	
 
 	return S_OK;
 }
@@ -131,9 +144,6 @@ HRESULT CModel::Bind_Material_OnShader(CShader * pShader, aiTextureType eType, c
 	_uint		iMaterialIndex = m_MeshContainers[iMeshContainerIndex]->Get_NumMaterialIndex();
 	if (iMaterialIndex >= m_iNumMaterials)
 		return E_FAIL;
-
-	if (nullptr == m_Materials[iMaterialIndex].pMaterials[eType])
-		return S_OK;
 
 	return m_Materials[iMaterialIndex].pMaterials[eType]->SetUp_ShaderResourceView(pShader, pConstantName, 0);	
 }
@@ -158,6 +168,32 @@ HRESULT CModel::Ready_MeshContainers()
 	return S_OK;
 }
 
+HRESULT CModel::Clone_MeshContainers()
+{
+	if (nullptr == m_pScene)
+		return E_FAIL;
+
+	m_iNumMeshContainers = m_pScene->mNumMeshes;
+
+	vector<CMeshContainer*>		MeshContainer;
+
+	for (_uint i = 0; i < m_pScene->mNumMeshes; ++i)
+	{
+		CMeshContainer*		pMeshContainer = (CMeshContainer*)m_MeshContainers[i]->Clone(&m_HierarchyNodes);
+		if (nullptr == pMeshContainer)
+			return E_FAIL;
+
+		Safe_Release(m_MeshContainers[i]);
+
+		MeshContainer.push_back(pMeshContainer);
+	}
+	m_MeshContainers.clear();
+
+	m_MeshContainers = MeshContainer;
+
+	return S_OK;	
+}
+
 HRESULT CModel::Ready_Materials(const char* pModelFilePath)
 {
 	if (nullptr == m_pScene)
@@ -172,14 +208,14 @@ HRESULT CModel::Ready_Materials(const char* pModelFilePath)
 			return E_FAIL;
 
 		MODELMATERIAL		Materials;
-		ZeroMemory(&Materials, sizeof(MODELMATERIAL));
+		ZeroMemory(&Materials, sizeof(MODELMATERIAL));		
 
 		for (_uint j = 0; j < AI_TEXTURE_TYPE_MAX; ++j)
 		{
 			char		szTextureFilePath[MAX_PATH] = "";
 
-			aiString	strPath;
-
+			aiString	strPath;		
+			
 			if (FAILED(pAIMaterial->GetTexture(aiTextureType(j), 0, &strPath)))
 				continue;
 
@@ -197,7 +233,7 @@ HRESULT CModel::Ready_Materials(const char* pModelFilePath)
 
 			Materials.pMaterials[j] = CTexture::Create(m_pDevice, m_pDeviceContext, szFullPath);
 			if (nullptr == Materials.pMaterials[j])
-				return E_FAIL;
+				return E_FAIL;				
 		}
 		m_Materials.push_back(Materials);
 	}
@@ -214,7 +250,7 @@ HRESULT CModel::Ready_Animations()
 
 	for (_uint i = 0; i < m_iNumAnimations; ++i)
 	{
-		aiAnimation*	pAIAnimation = m_pScene->mAnimations[i];
+		aiAnimation*	pAIAnimation = m_pScene->mAnimations[i];		
 
 		CAnimation*		pAnimation = CAnimation::Create(pAIAnimation, m_HierarchyNodes);
 		if (nullptr == pAnimation)
@@ -226,21 +262,46 @@ HRESULT CModel::Ready_Animations()
 	return S_OK;
 }
 
-HRESULT CModel::Ready_HierarchyNodes(aiNode * pNode, HierarchyNode * pParent, _uint iDepth)
+HRESULT CModel::Clone_Animations()
 {
 	if (nullptr == m_pScene)
-		return E_FAIL;
+		return E_FAIL;	
+
+	vector<CAnimation*>		Animations;
+
+	for (_uint i = 0; i < m_iNumAnimations; ++i)
+	{
+		aiAnimation*	pAIAnimation = m_pScene->mAnimations[i];
+
+		CAnimation*		pAnimation = m_Animations[i]->Clone(pAIAnimation, m_HierarchyNodes);
+		if (nullptr == pAnimation)
+			return E_FAIL;
+
+		Safe_Release(m_Animations[i]);
+
+		Animations.push_back(pAnimation);
+	}
+
+	m_Animations = Animations;
+
+	return S_OK;
+}
+
+HRESULT CModel::Ready_HierarchyNodes(aiNode* pNode, CHierarchyNode* pParent, _uint iDepth)
+{
+	if (nullptr == m_pScene)
+		return E_FAIL;		
 
 	_uint	iNumChildren = pNode->mNumChildren;
 
-	HierarchyNode*			pHierarchyNode = HierarchyNode::Create(pNode, pParent, iDepth);
+	CHierarchyNode*			pHierarchyNode = CHierarchyNode::Create(pNode, pParent, iDepth);
 	if (nullptr == pHierarchyNode)
 		return E_FAIL;
 
 	for (_uint i = 0; i < iNumChildren; ++i)
-	{
+	{		
 		if (FAILED(Ready_HierarchyNodes(pNode->mChildren[i], pHierarchyNode, iDepth + 1)))
-			return E_FAIL;
+			return E_FAIL;	
 	}
 
 	m_HierarchyNodes.push_back(pHierarchyNode);
@@ -278,15 +339,27 @@ void CModel::Free()
 {
 	__super::Free();
 
+	for (auto& pAnimation : m_Animations)
+		Safe_Release(pAnimation);
+
+	m_Animations.clear();
+
 	for (auto& pMeshContainer : m_MeshContainers)
 		Safe_Release(pMeshContainer);
+
+	for (auto& pHierarchyNode : m_HierarchyNodes)
+		Safe_Release(pHierarchyNode);
+
+	m_HierarchyNodes.clear();
+
+
 
 	for (auto& pMaterial : m_Materials)
 	{
 		for (_uint i = 0; i < AI_TEXTURE_TYPE_MAX; ++i)
 		{
 			Safe_Release(pMaterial.pMaterials[i]);
-		}
+		}		
 	}
 	m_Materials.clear();
 

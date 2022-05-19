@@ -11,11 +11,11 @@ class CChannel final :  public CBase
 {
 private:
 	CChannel();
+	CChannel(const CChannel& rhs);
 	virtual ~CChannel() = default;
 
-
 public:
-	void SetUp_HierarchyNodePtr(class HierarchyNode* pNode) {
+	void SetUp_HierarchyNodePtr(class CHierarchyNode* pNode) {
 		m_pHierarchyNode = pNode;
 		Safe_AddRef(m_pHierarchyNode);
 	}
@@ -24,9 +24,9 @@ public:
 		m_iCurrentKeyFrame = iKeyFrame;
 	}
 
-
 public:
-	HRESULT NativeConstruct(aiNodeAnim* pAIChannel);
+	HRESULT NativeConstruct_Prototype(aiNodeAnim* pAIChannel);
+	HRESULT NativeConstruct();
 	void Compute_TransformationMatrix(_double PlayTime);
 
 private:
@@ -36,20 +36,22 @@ private:
 	_uint							m_iNumKeyFrames = 0;
 	_uint							m_iCurrentKeyFrame = 0;
 
-
 	vector<KEYFRAME*>				m_KeyFrames;
 	typedef vector<KEYFRAME*>		KEYFRAMES;
 
-	class HierarchyNode*			m_pHierarchyNode = nullptr;
-
+	class CHierarchyNode*			m_pHierarchyNode = nullptr;
 
 private:
-	_float4x4	m_TransformationMatrix;
+	_float4x4						m_TransformationMatrix;
+	_bool							m_isCloned = false;
+
 private:
-	HRESULT	Ready_KeyFrames(aiNodeAnim* pAIChannel);
-	
+
+	HRESULT Ready_KeyFrames(aiNodeAnim* pAIChannel);
+
 public:
 	static CChannel* Create(aiNodeAnim* pAIChannel);
+	CChannel* Clone();
 	virtual void Free() override;
 };
 

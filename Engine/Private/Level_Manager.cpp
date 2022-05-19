@@ -8,7 +8,7 @@ CLevel_Manager::CLevel_Manager()
 {
 }
 
-HRESULT CLevel_Manager::OpenLevel(_uint iLevelIndex, CLevel * pLevel)  
+HRESULT CLevel_Manager::OpenLevel(_uint iLevelIndex, CLevel * pLevel)
 {
 
 	CGameInstance*		pGameInstance = CGameInstance::GetInstance();

@@ -36,11 +36,19 @@ HRESULT CBackGround::NativeConstruct(void * pArg)
 	if (FAILED(SetUp_Components()))
 		return E_FAIL;
 
-	m_fX = 231.f;
-	m_fY = 284.f;
+	//m_fX = 231.f;
+	//m_fY = 284.f;
 
-	m_fSizeX = 252;
-	m_fSizeY = 570;
+	//m_fSizeX = 252;
+	//m_fSizeY = 570;
+
+
+	m_fX = g_iWinCX * 0.5f;
+	m_fY = g_iWinCY * 0.5f;
+
+	m_fSizeX = g_iWinCX;
+	m_fSizeY = g_iWinCY;
+
 
 	return S_OK;
 }

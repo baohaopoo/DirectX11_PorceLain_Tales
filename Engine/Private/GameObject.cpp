@@ -18,13 +18,6 @@ CGameObject::CGameObject(const CGameObject & rhs)
 	Safe_AddRef(m_pDevice);
 }
 
-//delete component는 내가 추가한것임 .
-void CGameObject::Delete_Component(const _tchar * pComponentTag)
-{
-	if (m_Components[pComponentTag] != nullptr)
-		m_Components.erase(pComponentTag);
-}
-
 HRESULT CGameObject::NativeConstruct_Prototype()
 {
 	return S_OK;

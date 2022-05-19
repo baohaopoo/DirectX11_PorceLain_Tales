@@ -2,7 +2,6 @@
 
 namespace Engine
 {
-	//애니메이션, keyframe을 위한. 
 	typedef struct tagKeyFrame
 	{
 		XMFLOAT3			vScale;
@@ -63,8 +62,8 @@ namespace Engine
 		XMFLOAT3		vPosition;
 		XMFLOAT3		vNormal;
 		XMFLOAT2		vTexUV;
-		XMUINT4			vBlendIndex;
-		XMFLOAT4		vBlendWeight;
+		XMUINT4			vBlendIndex; /* 이 점정에 영향을 주는 뼈의 인덱스들(최대 네개)*/
+		XMFLOAT4		vBlendWeight; /* 각 뼈(최대 네개)가 정점에게 주는 영향(0.0 ~ 1.0) */
 	}VTXANIMMODEL;
 
 	typedef struct ENGINE_DLL tagVertex_Anim_Model_Declaration

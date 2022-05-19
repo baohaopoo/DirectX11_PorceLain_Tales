@@ -91,8 +91,14 @@
     <ClCompile Include="..\private\Channel.cpp">
       <Filter>01.Utility\03.Component\Model\Model\Channel</Filter>
     </ClCompile>
-    <ClCompile Include="..\Private\HierarchyNode.cpp">
+    <ClCompile Include="..\private\HierarchyNode.cpp">
       <Filter>01.Utility\03.Component\Model\Model\HierarchyNode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\private\Collider.cpp">
+      <Filter>01.Utility\03.Component\Collider</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Private\DebugDraw.cpp">
+      <Filter>01.Utility\03.Component\Collider\DebugDraw</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -198,8 +204,14 @@
     <ClInclude Include="..\public\Channel.h">
       <Filter>01.Utility\03.Component\Model\Model\Channel</Filter>
     </ClInclude>
-    <ClInclude Include="..\Public\HierarchyNode.h">
+    <ClInclude Include="..\public\HierarchyNode.h">
       <Filter>01.Utility\03.Component\Model\Model\HierarchyNode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\public\Collider.h">
+      <Filter>01.Utility\03.Component\Collider</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Public\DebugDraw.h">
+      <Filter>01.Utility\03.Component\Collider\DebugDraw</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -303,7 +315,13 @@
       <UniqueIdentifier>{0e41a815-cdc0-4595-8d5f-4020ad43cc5e}</UniqueIdentifier>
     </Filter>
     <Filter Include="01.Utility\03.Component\Model\Model\HierarchyNode">
-      <UniqueIdentifier>{d6c36ec6-fca1-4842-b415-f09d35456126}</UniqueIdentifier>
+      <UniqueIdentifier>{7b11add4-f635-4dba-a359-de10b539cda8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Utility\03.Component\Collider">
+      <UniqueIdentifier>{fa7a1212-0d5a-4a54-93f8-4e9f60166e09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01.Utility\03.Component\Collider\DebugDraw">
+      <UniqueIdentifier>{25b5bebb-af86-4868-8144-866f6e7d7a9e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -83,6 +83,8 @@ HRESULT CVIBuffer_Rect::NativeConstruct_Prototype()
 		return E_FAIL;
 #pragma endregion
 
+	Safe_Delete_Array(pIndices);
+
 	return S_OK;
 }
 

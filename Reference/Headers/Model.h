@@ -18,7 +18,6 @@ public:
 		return m_iNumMeshContainers;
 	}
 
-
 	void Set_AnimationIndex(_uint iAnimIndex) {
 		m_iCurrentAnimIndex = iAnimIndex;
 	}
@@ -40,28 +39,15 @@ private:
 	TYPE					m_eType = TYPE_END;
 	_float4x4				m_PivotMatrix;
 
-
 private:
 	_uint									m_iNumMeshContainers = 0;
 	vector<class CMeshContainer*>			m_MeshContainers;
 	typedef vector<class CMeshContainer*>	MESHCONTAINERS;
 
-	
-
-
 private: 
 	_uint									m_iNumMaterials = 0;
 	vector<MODELMATERIAL>					m_Materials;
 	typedef vector<MODELMATERIAL>			MATERIALS;
-
-
-	//애니메이션용
-
-private:
-	_uint	m_iNumAnimations = 0;
-	_uint	m_iCurrentAnimIndex = 0;
-	vector<class CAnimation*>	m_Animations;
-	typedef vector<class CAnimation*>	ANIMATIONS;
 
 private:
 	_uint									m_iNumAnimations = 0;
@@ -71,14 +57,17 @@ private:
 
 private:
 	_uint									m_iNumNodes = 0;
-	vector<class HierarchyNode*>			m_HierarchyNodes;
-	typedef vector<class HierarchyNode*>	HIERARCHYNODES;
+	vector<class CHierarchyNode*>			m_HierarchyNodes;
+	typedef vector<class CHierarchyNode*>	HIERARCHYNODES;
 
 private:
 	HRESULT Ready_MeshContainers();
+	HRESULT Clone_MeshContainers();
 	HRESULT Ready_Materials(const char* pModelFilePath);
 	HRESULT Ready_Animations();
-	HRESULT Ready_HierarchyNodes(aiNode* pNode, HierarchyNode* pParent = nullptr, _uint iDepth = 0);
+	HRESULT Clone_Animations();	
+	HRESULT Ready_HierarchyNodes(aiNode* pNode, CHierarchyNode* pParent = nullptr, _uint iDepth = 0);
+
 public:
 	static CModel* Create(ID3D11Device* pDevice, ID3D11DeviceContext* pDeviceContext, TYPE eType, const char* pModelFilePath, const char* pModelFileName, _fmatrix PivotMatrix = XMMatrixIdentity());
 	virtual CComponent* Clone(void* pArg);
