@@ -59,7 +59,7 @@ void LoadingUI::Tick(_double TimeDelta)
     __super::Tick(TimeDelta);
 
 
-    if (GetKeyState(VK_LBUTTON) & 0x8000)
+    //if (GetKeyState(VK_LBUTTON) & 0x8000)
     {
 
         if (m_fSizeX >= g_iWinCX)

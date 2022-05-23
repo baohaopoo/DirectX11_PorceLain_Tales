@@ -102,8 +102,8 @@ HRESULT CLevel_GamePlay::Ready_Layer_Camera(const _tchar * pLayerTag)
 
 	_float3 playerpos;
 	XMStoreFloat3(&playerpos, player);
-	////x,y,z 가져오는 방식이.. 뭐야 
-	//XMStoreFloat3(&playerpos, player)
+	//x,y,z 가져오는 방식이.. 뭐야 
+	XMStoreFloat3(&playerpos, player);
 
 	CameraDesc.vEye = _float3(playerpos.x, playerpos.y+0.7f, playerpos.z-1);
 	CameraDesc.vAt = _float3(playerpos.x, 0.f, playerpos.z);
@@ -112,13 +112,6 @@ HRESULT CLevel_GamePlay::Ready_Layer_Camera(const _tchar * pLayerTag)
 	CameraDesc.fFar = 300.0f;
 	CameraDesc.fFovy = XMConvertToRadians(60.0f);
 	CameraDesc.fAspect = (_float)g_iWinCX / g_iWinCY;
-	/*CameraDesc.vEye = _float3(0.f, 3.f, -15.f);
-	CameraDesc.vAt = _float3(0.f, 0.f, 0.f);
-	CameraDesc.vAxisY = _float3(0.f, 1.f, 0.f);
-	CameraDesc.fNear = 10.f;
-	CameraDesc.fFar = 100.0f;
-	CameraDesc.fFovy = XMConvertToRadians(60.0f);
-	CameraDesc.fAspect = (_float)g_iWinCX / g_iWinCY;*/
 
 	if (FAILED(pGameInstance->Add_GameObjectToLayer(LEVEL_GAMEPLAY, pLayerTag, TEXT("Prototype_GameObject_Camera_Default"), &CameraDesc)))
 		return E_FAIL;

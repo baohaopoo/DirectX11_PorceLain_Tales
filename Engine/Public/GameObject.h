@@ -16,6 +16,8 @@ public:
 		return Find_Component(pComponentTag);
 	}
 
+	void Delete_Component(const _tchar* pComponentTag);
+
 public:
 	virtual HRESULT NativeConstruct_Prototype();
 	virtual HRESULT NativeConstruct(void* pArg, CTransform::TRANSFORMDESC* pTransformDesc = nullptr);

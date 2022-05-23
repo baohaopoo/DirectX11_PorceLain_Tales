@@ -45,7 +45,8 @@ HRESULT CPlayer::NativeConstruct(void * pArg)
 void CPlayer::Tick(_double TimeDelta)
 {
 	__super::Tick(TimeDelta);
-	
+
+
 	KeyInput(TimeDelta);
 	m_pModelCom->Update(TimeDelta);
 }
@@ -96,7 +97,7 @@ HRESULT CPlayer::SetUp_Components()
 	if (FAILED(__super::SetUp_Components(TEXT("Com_Shader"), LEVEL_GAMEPLAY, TEXT("Prototype_Component_Shader_VtxAnim"), (CComponent**)&m_pShaderCom)))
 		return E_FAIL;
 
-	/* For.Com_Model */
+	///* For.Com_Model */
 	if (FAILED(__super::SetUp_Components(TEXT("Com_Model"), LEVEL_GAMEPLAY, TEXT("Prototype_Component_Model_Player"), (CComponent**)&m_pModelCom)))
 		return E_FAIL;
 	
@@ -115,6 +116,9 @@ HRESULT CPlayer::SetUp_ConstantTable()
 		return E_FAIL;
 	if (FAILED(m_pShaderCom->Set_RawValue("g_ProjMatrix", &pGameInstance->Get_TransformFloat4x4_TP(CPipeLine::D3DTS_PROJ), sizeof(_float4x4))))
 		return E_FAIL;	
+
+
+
 	//if (FAILED(m_pShaderCom->Set_RawValue("g_vCamPosition", &pGameInstance->Get_CamPositionFloat4(), sizeof(_float4))))
 	//	return E_FAIL;
 
@@ -145,14 +149,15 @@ void CPlayer::KeyInput(_float TimeDelta)
 {
 	CGameInstance*		pGameInstance = CGameInstance::GetInstance();
 
-	if (pGameInstance->Get_DIKeyState(VK_UP) & 0x8000)
+	if (/*pGameInstance->Get_DIKeyState(VK_UP) & 0x8000*/GetKeyState(VK_UP) & 0x8000)
 	{
-		m_pTransformCom->Rotation({ 0,1,0 }, 150);
+	
+	m_pTransformCom->Rotation({ 0,1,0 }, 0);
 		m_pTransformCom->Go_Straight(TimeDelta);
 	}
 	if(GetKeyState(VK_DOWN)&0x8000)
 	{
-		m_pTransformCom->Rotation({ 0,1,0 }, 300);                      
+		m_pTransformCom->Rotation({ 0,1,0 }, 330);                      
 		m_pTransformCom->Go_Straight(TimeDelta);
 	}
 	if (GetKeyState(VK_LEFT) & 0x8000)

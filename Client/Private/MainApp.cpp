@@ -220,10 +220,10 @@ HRESULT CMainApp::Ready_Prototype_Texture_UI()
 
 
 
-
+	//ExitBtn
 	/* ExitBtnUI */
 	if (FAILED(m_pGameInstance->Add_Prototype(LEVEL_LOGO, TEXT("Prototype_Component_Texture_ExitBtnUI"),
-		CTexture::Create(m_pDevice, m_pDeviceContext, TEXT("../Bin/Resources/Textures/UI/LogoUI/ExitBtn.dds"), 1))))
+		CTexture::Create(m_pDevice, m_pDeviceContext, TEXT("../Bin/Resources/Textures/UI/LogoUI/newExit.dds"), 1))))
 		return E_FAIL;
 
 	/* PressExitBtnUI */

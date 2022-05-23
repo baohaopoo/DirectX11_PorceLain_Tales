@@ -7,6 +7,7 @@
 #include "Player.h"
 #include "Fork.h"
 #include "Map.h"
+#include "Level_Loading.h"
 #include"../Public/Vampire.h"
 CLoader::CLoader(ID3D11Device* pDeviceOut, ID3D11DeviceContext* pDeviceContextOut)
 	: m_pDevice(pDeviceOut), m_pDeviceContext(pDeviceContextOut)
@@ -122,6 +123,10 @@ HRESULT CLoader::Loading_ForGamePlayLevel()
 
 	if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Model_Player"),
 		CModel::Create(m_pDevice, m_pDeviceContext, CModel::TYPE_ANIM, "../Bin/Resources/Meshes/Player/", "WalkPlayer.fbx", PivotMatrix))))
+		return E_FAIL;
+
+	if (FAILED(pGameInstance->Add_Prototype(LEVEL_GAMEPLAY, TEXT("Prototype_Component_Model_Player_Idle"),
+		CModel::Create(m_pDevice, m_pDeviceContext, CModel::TYPE_ANIM, "../Bin/Resources/Meshes/Player/", "NewPlayer.fbx", PivotMatrix))))
 		return E_FAIL;
 
 

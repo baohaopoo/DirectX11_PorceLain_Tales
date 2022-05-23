@@ -162,6 +162,8 @@ CComponent * CGameInstance::Get_Component(_uint iLevelIndex, const _tchar * pLay
 	return m_pObject_Manager->Get_Component(iLevelIndex, pLayerTag, pComponentTag, iIndex);
 }
 
+
+
 HRESULT CGameInstance::Add_Prototype(const _tchar * pPrototypeTag, CGameObject * pPrototype)
 {
 	if (nullptr == m_pObject_Manager)
@@ -176,6 +178,11 @@ HRESULT CGameInstance::Add_GameObjectToLayer(_uint iLevelIndex, const _tchar * p
 		return E_FAIL;
 
 	return m_pObject_Manager->Add_GameObjectToLayer(iLevelIndex, pLayerTag, pPrototypeTag, pArg);
+}
+
+void CGameInstance::Delete_Component(const _tchar * pComponentTag)
+{
+	//m_Components.erase(pComponentTag);
 }
 
 HRESULT CGameInstance::Add_Prototype(_uint iLevelIndex, const _tchar * pPrototypeTag, CComponent * pPrototype)

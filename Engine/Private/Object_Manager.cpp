@@ -107,6 +107,12 @@ HRESULT CObject_Manager::Clear(_uint iLevelIndex)
 	return S_OK;
 }
 
+void CObject_Manager::Delete_Component(const _tchar * pComponentTag)
+{
+	//m_Prototypes.begin()->first
+	//m_Components.erase(pComponentTag);
+}
+
 CGameObject * CObject_Manager::Find_Prototype(const _tchar * pPrototypeTag)
 {
 	auto	iter = find_if(m_Prototypes.begin(), m_Prototypes.end(), CTagFinder(pPrototypeTag));

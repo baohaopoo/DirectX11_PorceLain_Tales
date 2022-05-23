@@ -1,0 +1,931 @@
+﻿  Engine_Struct.cpp
+  VIBuffer_Terrain.cpp
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\vibuffer_terrain.cpp(57): warning C4244: 'argument': conversion from 'Engine::_uint' to 'float', possible loss of data
+  VIBuffer_Rect.cpp
+  VIBuffer.cpp
+  Transform.cpp
+  Timer_Manager.cpp
+  Timer.cpp
+  Texture.cpp
+  Shader.cpp
+  Renderer.cpp
+  PIpeLine.cpp
+  Object_Manager.cpp
+  Model.cpp
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\model.cpp(194): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  MeshContainer.cpp
+  Light_Manager.cpp
+  Light.cpp
+  Level_Manager.cpp
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(17): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(17): error C2039: 'BoundingSphere': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(18): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(18): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(21): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(21): error C2039: 'BoundingBox': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(22): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(22): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(25): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(25): error C2039: 'BoundingOrientedBox': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(26): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(26): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(29): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(29): error C2039: 'BoundingFrustum': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(30): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(30): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(33): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(33): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(33): error C2146: syntax error: missing ')' before identifier 'xAxis'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(35): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(35): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(38): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(38): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(38): error C2146: syntax error: missing ')' before identifier 'origin'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(39): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(39): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(42): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(42): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(42): error C2146: syntax error: missing ')' before identifier 'origin'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(43): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(43): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(46): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(46): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(46): error C2146: syntax error: missing ')' before identifier 'pointA'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(47): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(47): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(42): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(42): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(42): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(43): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(43): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(44): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(44): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(45): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(45): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(45): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(49): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(49): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(49): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(50): error C2143: syntax error: missing ';' before '<'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(50): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(50): error C2238: unexpected token(s) preceding ';'
+  Level.cpp
+  Layer.cpp
+  Input_Device.cpp
+  Generating Code...
+  Compiling...
+  HierarchyNode.cpp
+  Graphic_Device.cpp
+  GameObject.cpp
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(17): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(17): error C2039: 'BoundingSphere': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(18): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(18): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(21): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(21): error C2039: 'BoundingBox': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(22): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(22): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(25): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(25): error C2039: 'BoundingOrientedBox': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(26): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(26): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(29): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(29): error C2039: 'BoundingFrustum': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(30): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(30): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(33): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(33): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(33): error C2146: syntax error: missing ')' before identifier 'xAxis'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(35): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(35): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(38): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(38): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(38): error C2146: syntax error: missing ')' before identifier 'origin'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(39): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(39): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(42): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(42): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(42): error C2146: syntax error: missing ')' before identifier 'origin'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(43): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(43): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(46): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(46): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(46): error C2146: syntax error: missing ')' before identifier 'pointA'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(47): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(47): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(42): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(42): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(42): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(43): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(43): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(44): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(44): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(45): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(45): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(45): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(49): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(49): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(49): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(50): error C2143: syntax error: missing ';' before '<'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(50): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(50): error C2238: unexpected token(s) preceding ';'
+  GameInstance.cpp
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(17): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(17): error C2039: 'BoundingSphere': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(18): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(18): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(21): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(21): error C2039: 'BoundingBox': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(22): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(22): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(25): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(25): error C2039: 'BoundingOrientedBox': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(26): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(26): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(29): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(29): error C2039: 'BoundingFrustum': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(30): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(30): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(33): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(33): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(33): error C2146: syntax error: missing ')' before identifier 'xAxis'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(35): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(35): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(38): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(38): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(38): error C2146: syntax error: missing ')' before identifier 'origin'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(39): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(39): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(42): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(42): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(42): error C2146: syntax error: missing ')' before identifier 'origin'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(43): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(43): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(46): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(46): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(46): error C2146: syntax error: missing ')' before identifier 'pointA'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(47): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(47): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(42): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(42): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(42): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(43): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(43): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(44): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(44): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(45): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(45): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(45): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(49): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(49): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(49): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(50): error C2143: syntax error: missing ';' before '<'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(50): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(50): error C2238: unexpected token(s) preceding ';'
+  DebugDraw.cpp
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(17): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(17): error C2039: 'BoundingSphere': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(18): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(18): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(21): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(21): error C2039: 'BoundingBox': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(22): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(22): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(25): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(25): error C2039: 'BoundingOrientedBox': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(26): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(26): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(29): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(29): error C2039: 'BoundingFrustum': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(30): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(30): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(33): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(33): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(33): error C2146: syntax error: missing ')' before identifier 'xAxis'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(35): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(35): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(38): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(38): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(38): error C2146: syntax error: missing ')' before identifier 'origin'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(39): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(39): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(42): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(42): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(42): error C2146: syntax error: missing ')' before identifier 'origin'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(43): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(43): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(46): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(46): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(46): error C2146: syntax error: missing ')' before identifier 'pointA'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(47): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(47): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(15): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(15): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(15): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(16): error C2275: 'DirectX::CXMMATRIX': illegal use of this type as an expression
+  c:\program files (x86)\windows kits\8.1\include\um\directxmath.h(388): note: see declaration of 'DirectX::CXMMATRIX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(16): error C2146: syntax error: missing ')' before identifier 'matWorld'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(18): error C2143: syntax error: missing ';' before '{'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(18): error C2447: '{': missing function header (old-style formal list?)
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(60): error C2039: 'Draw': is not a member of 'DX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(14): note: see declaration of 'DX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(60): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(60): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(60): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(61): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(63): error C2143: syntax error: missing ';' before '{'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(63): error C2447: '{': missing function header (old-style formal list?)
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(78): error C2039: 'Draw': is not a member of 'DX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(14): note: see declaration of 'DX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(78): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(78): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(78): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(79): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(81): error C2143: syntax error: missing ';' before '{'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(81): error C2447: '{': missing function header (old-style formal list?)
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(90): error C2039: 'Draw': is not a member of 'DX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(14): note: see declaration of 'DX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(90): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(90): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(90): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(91): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(93): error C2143: syntax error: missing ';' before '{'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(93): error C2447: '{': missing function header (old-style formal list?)
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(104): error C2039: 'Draw': is not a member of 'DX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(14): note: see declaration of 'DX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\debugdraw.cpp(104): fatal error C1003: error count exceeds 100; stopping compilation
+  Component_Manager.cpp
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(17): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(17): error C2039: 'BoundingSphere': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(18): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(18): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(21): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(21): error C2039: 'BoundingBox': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(22): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(22): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(25): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(25): error C2039: 'BoundingOrientedBox': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(26): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(26): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(29): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(29): error C2039: 'BoundingFrustum': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(30): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(30): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(33): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(33): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(33): error C2146: syntax error: missing ')' before identifier 'xAxis'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(35): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(35): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(38): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(38): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(38): error C2146: syntax error: missing ')' before identifier 'origin'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(39): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(39): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(42): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(42): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(42): error C2146: syntax error: missing ')' before identifier 'origin'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(43): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(43): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(46): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(46): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(46): error C2146: syntax error: missing ')' before identifier 'pointA'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(47): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(47): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(42): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(42): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(42): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(43): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(43): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(44): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(44): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(45): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(45): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(45): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(49): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(49): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(49): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(50): error C2143: syntax error: missing ';' before '<'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(50): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(50): error C2238: unexpected token(s) preceding ';'
+  Component.cpp
+  Collider.cpp
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(17): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(17): error C2039: 'BoundingSphere': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(18): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(18): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(21): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(21): error C2039: 'BoundingBox': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(22): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(22): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(25): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(25): error C2039: 'BoundingOrientedBox': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(26): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(26): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(29): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(29): error C2039: 'BoundingFrustum': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(30): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(30): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(33): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(33): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(33): error C2146: syntax error: missing ')' before identifier 'xAxis'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(35): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(35): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(38): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(38): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(38): error C2146: syntax error: missing ')' before identifier 'origin'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(39): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(39): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(42): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(42): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(42): error C2146: syntax error: missing ')' before identifier 'origin'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(43): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(43): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(46): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(46): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(46): error C2146: syntax error: missing ')' before identifier 'pointA'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(47): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(47): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(42): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(42): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(42): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(43): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(43): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(44): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(44): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(45): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(45): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(45): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(49): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(49): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(49): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(50): error C2143: syntax error: missing ';' before '<'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(50): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(50): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\collider.cpp(14): error C2039: 'm_pBasicEffect': is not a member of 'Engine::CCollider'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(8): note: see declaration of 'Engine::CCollider'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\collider.cpp(15): error C2039: 'm_pBatch': is not a member of 'Engine::CCollider'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(8): note: see declaration of 'Engine::CCollider'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\collider.cpp(18): error C2614: 'Engine::CCollider': illegal member initialization: 'm_pBasicEffect' is not a base or member
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\collider.cpp(18): error C2614: 'Engine::CCollider': illegal member initialization: 'm_pBatch' is not a base or member
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\collider.cpp(26): error C2065: 'm_pBasicEffect': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\collider.cpp(26): error C2061: syntax error: identifier 'BasicEffect'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\collider.cpp(27): error C2065: 'm_pBasicEffect': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\collider.cpp(27): error C2227: left of '->SetVertexColorEnabled' must point to class/struct/union/generic type
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\private\collider.cpp(27): note: type is 'unknown-type'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\collider.cpp(32): error C2065: 'm_pBasicEffect': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\collider.cpp(32): error C2227: left of '->GetVertexShaderBytecode' must point to class/struct/union/generic type
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\private\collider.cpp(32): note: type is 'unknown-type'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\collider.cpp(34): error C2065: 'm_pBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\collider.cpp(34): error C2061: syntax error: identifier 'PrimitiveBatch'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\collider.cpp(36): error C2653: 'VertexPositionColor': is not a class or namespace name
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\collider.cpp(36): error C2065: 'InputElements': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\collider.cpp(36): error C2065: 'InputElementCount': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\collider.cpp(59): error C2065: 'm_pAABB': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\collider.cpp(59): error C2061: syntax error: identifier 'BoundingBox'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\private\collider.cpp(59): fatal error C1003: error count exceeds 100; stopping compilation
+  Channel.cpp
+  Camera.cpp
+  BlendObject.cpp
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(16): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(17): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(17): error C2039: 'BoundingSphere': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(18): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(18): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(20): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(21): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(21): error C2039: 'BoundingBox': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(22): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(22): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(24): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(25): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(25): error C2039: 'BoundingOrientedBox': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(26): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(26): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(28): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(29): error C2059: syntax error: 'const'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(29): error C2039: 'BoundingFrustum': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(30): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(30): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(32): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(33): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(33): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(33): error C2146: syntax error: missing ')' before identifier 'xAxis'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(35): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(35): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(37): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(38): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(38): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(38): error C2146: syntax error: missing ')' before identifier 'origin'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(39): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(39): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(41): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(42): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(42): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(42): error C2146: syntax error: missing ')' before identifier 'origin'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(43): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(43): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2039: 'PrimitiveBatch': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2065: 'PrimitiveBatch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2039: 'VertexPositionColor': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2065: 'VertexPositionColor': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(45): error C2065: 'batch': undeclared identifier
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(46): error C2275: 'DirectX::FXMVECTOR': illegal use of this type as an expression
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(46): note: see declaration of 'DirectX::FXMVECTOR'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(46): error C2146: syntax error: missing ')' before identifier 'pointA'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(47): error C3083: 'Colors': the symbol to the left of a '::' must be a type
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\debugdraw.h(47): error C2039: 'White': is not a member of 'DirectX'
+  c:\users\baoha\documents\directx11_porcelain_tales\engine\public\directxtk\screengrab.h(31): note: see declaration of 'DirectX'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(42): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(42): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(42): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(43): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(43): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(44): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(44): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(44): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(45): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(45): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(45): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(49): error C2143: syntax error: missing ';' before '*'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(49): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(49): error C2238: unexpected token(s) preceding ';'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(50): error C2143: syntax error: missing ';' before '<'
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(50): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\baoha\documents\directx11_porcelain_tales\engine\public\collider.h(50): error C2238: unexpected token(s) preceding ';'
+  Base.cpp
+  Animation.cpp
+  Generating Code...

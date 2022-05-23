@@ -18,6 +18,12 @@ CGameObject::CGameObject(const CGameObject & rhs)
 	Safe_AddRef(m_pDevice);
 }
 
+void CGameObject::Delete_Component(const _tchar * pComponentTag)
+{
+	m_Components.erase(pComponentTag);
+
+}
+
 HRESULT CGameObject::NativeConstruct_Prototype()
 {
 	return S_OK;

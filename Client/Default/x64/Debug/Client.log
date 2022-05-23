@@ -1,0 +1,4 @@
+﻿  Player.cpp
+c:\users\baoha\documents\directx11_porcelain_tales\client\private\player.cpp(50): warning C4244: 'argument': conversion from 'Engine::_double' to 'Engine::_float', possible loss of data
+  Client.vcxproj -> C:\Users\baoha\Documents\DirectX11_PorceLain_Tales\Client\Default\..\Bin\Client.exe
+  Client.vcxproj -> ..\Bin\Client.pdb (Full PDB)

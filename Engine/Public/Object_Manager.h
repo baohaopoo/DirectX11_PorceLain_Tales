@@ -26,6 +26,8 @@ public:
 	void LateTick(_double TimeDelta);
 	HRESULT Clear(_uint iLevelIndex);
 
+	void Delete_Component(const _tchar* pComponentTag);
+
 private:
 	/* 원형객체들을 보관한다. */
 	map<const _tchar*, class CGameObject*>			m_Prototypes;

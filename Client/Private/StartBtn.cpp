@@ -41,8 +41,8 @@ HRESULT StartBtn::NativeConstruct(void* pArg)
 	m_fY = 220.f;
 
 	//ªÁ¿Ã¡Ó
-	m_fSizeX = 100;
-	m_fSizeY = 100;
+	m_fSizeX = 70;
+	m_fSizeY = 70;
 
 	return S_OK;
 }

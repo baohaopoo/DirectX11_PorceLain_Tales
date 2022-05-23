@@ -42,7 +42,12 @@ void CCamera_Default::Tick(_double TimeDelta)
 
 
 	
-	
+	CTransform* pPlayerTransform = (CTransform*)pGameInstance->Get_Component(LEVEL_GAMEPLAY, TEXT("Layer_Player"), TEXT("Com_Transform"));
+	_vector player = pPlayerTransform->Get_State(CTransform::STATE_POSITION);
+	_float3 playerpos;
+	XMStoreFloat3(&playerpos, player);
+
+	m_pTransformCom->Set_State(CTransform::STATE_POSITION, XMVectorSet(playerpos.x, playerpos.y+0.8f, playerpos.z -1.f, 1.f));
 
 	//Mouse¿ë
 	_long		MouseMove;
